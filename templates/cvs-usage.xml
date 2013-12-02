@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<document>
+  
+  
+  <properties>
+    <title>CVS</title>
+  </properties>
+
+  <body>
+        
+        
+        
+            <section name="Web Access">
+        <p>
+          <a href="http://www.avantia-inc.com/cgi-bin/viewcvs.cgi/retsCompliance/">http://www.avantia-inc.com/cgi-bin/viewcvs.cgi/retsCompliance/</a>
+        </p>
+      </section>
+              
+      
+            <section name="CVS Access">
+ 
+        <p>
+          Developers can use <a href="http://cvsgrab.sourceforge.net/">CVSGrab</a>
+          to access the viewcvs web interface to checkout the source code.
+        </p>
+
+      </section>
+      
+      </body>
+
+</document>
+

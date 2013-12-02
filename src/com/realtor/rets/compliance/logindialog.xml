@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog text="login"  modal="true" columns="6" top="4" 
+         left="4" bottom="4" right="4" gap="4"  >
+	<label text="Login Name:" />
+	<combobox name="username" colspan="4" valign="center" text="avantia"/> 
+	<button name="b_login" text="login" action="loginAction" />
+	<label text="Password :" />
+    <textfield name="password" colspan="5" valign="center" text="rapattoni"/>
+    <label text="Login URL :" />
+    
+        <combobox name="loginurl" colspan="5" valign="center"
+                      text="http://127.0.0.1:8080/rets/server/login"> 
+          <choice text="http://127.0.0.1:8080/rets/server/login"/>
+          <choice text="http://208.57.205.108:8090/rets/server/login"/>
+          <choice text="http://retslive.rapmls.com/mcc/rets/rets_login.asp"/>
+        </combobox>
+	<label text="UserAgent :" />
+    <textfield name="useragent" colspan="5" valign="center" text="Avantia/1.0"/>
+
+        
+</dialog>

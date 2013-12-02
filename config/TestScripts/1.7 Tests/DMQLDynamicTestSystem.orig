@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+    <TestName>DMQL Dynamic Tests</TestName>
+    <TestDescription>Test DMQL query language by using user's selections in TestParameters</TestDescription>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Numeric Search - Minimum Value</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>(${DMQL.System.Decimal.Minimum.Field}=${DMQL.System.Decimal.Minimum.Value}+)</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <Offset>1</Offset>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemNumericResultsMin</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Numeric Search - Maximum Value</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <Offset>1</Offset>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemNumericResultsMax</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Numeric Search - Range</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>(${DMQL.System.Decimal.RangeHigh.Field}=${DMQL.System.Decimal.RangeLow.Value}-${DMQL.System.Decimal.RangeHigh.Value})</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <Offset>1</Offset>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemNumericResultsRange</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Character Search - AND</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>(${DMQL.System.Character.AndOr.Field}=${DMQL.System.Character.AndOr.Value}),(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <Offset>1</Offset>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemCharResultsAND</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Character Search - OR</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>(${DMQL.System.Character.AndOr.Field}=${DMQL.System.Character.AndOr.Value})|(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <Offset>1</Offset>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemCharResultsOR</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Character Search - Starts With</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>(${DMQL.System.Character.StartsWith.Field}=${DMQL.System.Character.StartsWith.Value}*)</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <Offset>1</Offset>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemCharResultsStarts</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Character Search - Contains</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>(${DMQL.System.Character.Contains.Field}=*${DMQL.System.Character.Contains.Value}*)</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <Offset>1</Offset>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemCharResultsContains</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Date Search - After This Date</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>(${DMQL.System.Date.Minimum.Field}=${DMQL.System.Date.Minimum.Value}+)</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <Offset>1</Offset>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemDateResultsMin</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Date Search - Before This Date</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>(${DMQL.System.Date.Maximum.Field}=${DMQL.System.Date.Maximum.Value}-)</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <Offset>1</Offset>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemDateResultsMax</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Date Search - Today</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>(${DMQL.System.Date.Today.Field}=TODAY)</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <Offset>1</Offset>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemDateResultsToday</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <TestEvaluators>
+        <JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+        <JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders</JavaClassName>
+        <JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders</JavaClassName>
+    </TestEvaluators>
+</RETSComplianceTest>

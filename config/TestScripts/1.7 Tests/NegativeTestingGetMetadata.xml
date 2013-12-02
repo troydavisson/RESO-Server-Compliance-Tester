@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+	<TestName>NegativeTestingGetMetadata</TestName>
+	<TestDescription>Negative Testing For GetMetadata Transaction</TestDescription>
+	<GetMetadataTransaction>
+		<TransactionLabel>Invalid Resource</TransactionLabel>
+		<Type>METADATA-TABLE</Type>
+		<Id>RETSNegativeTestingResource:${GetMetadata.Table}</Id>
+		<Format>STANDARD-XML</Format>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.InvalidResource</JavaClassName>
+		</TestEvaluators>
+	</GetMetadataTransaction>
+	<GetMetadataTransaction>
+		<TransactionLabel>Invalid Type</TransactionLabel>
+		<Type>METADATA-RETSNegativeTesting</Type>
+		<Id>0</Id>
+		<Format>STANDARD-XML</Format>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.InvalidType</JavaClassName>
+		</TestEvaluators>
+	</GetMetadataTransaction>
+	<GetMetadataTransaction>
+		<TransactionLabel>Requested DTD Unavailable</TransactionLabel>
+		<Type>METADATA-CLASS</Type>
+		<Id>0</Id>
+		<Format>STANDARD-XML:RETS-METADATA-20060101.dtd</Format>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.RequestedDTDUnavailable</JavaClassName>
+		</TestEvaluators>
+	</GetMetadataTransaction>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+	</TestEvaluators>
+</RETSComplianceTest>

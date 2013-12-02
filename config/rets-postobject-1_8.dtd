@@ -1,0 +1,53 @@
+<!--
+	submitted by:
+	 1.8: Paula O'Brien, Ronin Technologies
+					
+	 See http://www.rets.org for more information.
+    
+    This DTD is identified by PUBLIC and SYSTEM identifiers:
+    
+    PUBLIC "-//RETS//DTD Update 1.7.2//EN"
+    SYSTEM "http://www.rets.org/dtd/2008/08/rets-update-1_7_2.dtd"
+							
+    ==========================================================================
+    This material is provided AS-IS. The authors, copyright holders and
+    standards-body contributors to this specification  (hereinafter
+    "CONTRIBUTORS") make no representation or warranty, express or implied,
+    including but not limited to warranties of merchantability, fitness for
+    any purpose whatsoever, title or non-infringement; (ii) that the
+    contents of this specification and its associated codes, documentation
+    and ancillary materials are free from error, nor that these materials 
+    will not infringe any third-party patents, copyrights, trademarks or
+    other rights. In no event will CONTRIBUTORS be liable to any party for
+    any direct, indirect, special or consequential damages for any use of
+    this material, including without limitation lost profits, business
+    interruption, loss of programs or other data on any information handling
+    system, even if any of the CONTRIBUTORS, individually or otherwise, have
+    been advised of the possibility of such damages.
+    ==========================================================================
+-->
+<!-- BASIC ELEMENTS -->
+<!--DATE/TIME ELEMENTS -->
+<!--see ISO 8601 for acceptable values for Format -->
+<!ATTLIST RETS
+	ReplyCode CDATA #REQUIRED
+	ReplyText CDATA #REQUIRED
+>
+<!ATTLIST RETS-STATUS
+	ReplyCode CDATA #REQUIRED
+	ReplyText CDATA #REQUIRED
+>
+<!ELEMENT DELIMITER EMPTY>
+<!ATTLIST DELIMITER value CDATA #REQUIRED>
+<!ELEMENT COLUMNS (#PCDATA)>
+<!ELEMENT DATA (#PCDATA)>
+<!ELEMENT ACTIVATION EMPTY>
+<!ELEMENT WARNINGDATA (#PCDATA)>
+<!ELEMENT ERRORDATA (#PCDATA)>
+<!ELEMENT ERRORBLOCK (ERRORDATA+)>
+<!ELEMENT WARNINGBLOCK (WARNINGDATA+)>
+<!ELEMENT RETS-STATUS EMPTY>
+<!-- COMPOUND ELEMENTS -->
+<!-- PACKAGING ELEMENTS -->
+<!ELEMENT RETS (DELIMITER?,COLUMNS?,DATA*,ACTIVATION?,RETS-STATUS?,ERRORBLOCK?,WARNINGBLOCK?)>
+

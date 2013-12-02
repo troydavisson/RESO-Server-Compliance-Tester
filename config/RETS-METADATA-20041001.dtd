@@ -1,0 +1,31 @@
+<!-- <!DOCTYPE RETS SYSTEM "RETS-METADATA-20041001.dtd"> -->
+<!-- <!DOCTYPE RETS [ -->
+<!--   Real Estate Transaction Specification (RETS) DTD  -->
+<!--   Real Estate Transaction Markup Language (RETML)  -->
+<!--
+	submitted by:
+	Leendert Bijnagte
+	Fidelity National Information Solutions, Inc.
+	Version 1.x  11/20/2001
+	
+	Revision 1.5: Leendert Bijnagte, Michael Del Gaudio
+	                      Edited by Bruce Toback
+-->
+<!-- BASIC ELEMENTS -->
+<!--DATE/TIME ELEMENTS -->
+<!--see ISO 8601 for acceptable values for Format -->
+<!ENTITY  % METADATA SYSTEM "RETS-METADATA-CONTENT-1_7.dtd">
+%METADATA;
+<!ATTLIST RETS
+	ReplyCode CDATA #REQUIRED
+	ReplyText CDATA #REQUIRED
+>
+<!ELEMENT RETS-STATUS EMPTY>
+<!ATTLIST RETS-STATUS
+	ReplyCode CDATA #IMPLIED
+	ReplyText CDATA #IMPLIED
+>
+<!-- COMPOUND ELEMENTS -->
+<!-- PACKAGING ELEMENTS -->
+<!ELEMENT RETS (METADATA?, RETS-STATUS?)>
+<!-- ]> -->

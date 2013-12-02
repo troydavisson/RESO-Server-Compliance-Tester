@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<project>
+  <extend>/home/maven/project.xml</extend>
+
+  <name>Compliance Checker</name>
+  <id>rets-compliance-checker</id>
+  <currentVersion>1.0</currentVersion>
+  <inceptionYear>2002</inceptionYear>
+  <package>com.realtor.rets.compliance</package>
+  <logo>/images/logos/rets_compliance_checker.jpg</logo>
+
+  <shortDescription>
+    Real Estate Transaction Standard
+  </shortDescription>
+
+  <description>
+   The RETS compliance checker is a utilitiy used to validate that
+   RETS servers correctly implement the RETS standard.  It tests versions 1.x.
+  </description>
+
+  <url>/sandbox/compliance</url>
+
+  <distributionDirectory>
+    /var/www/html/sandbox/repository/compliance/
+  </distributionDirectory>
+
+  <repository>
+    <url>
+     ${sandbox.repository.url}/retsCompliance/
+    </url>
+  </repository>
+
+  <versions>
+    <version>
+      <id>release</id>
+      <name>1.0</name>
+      <tag></tag>
+    </version>
+  </versions>
+
+  <dependencies>
+    <dependency>
+      <groupId>poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>1.8.0-dev-20020919</version>
+      <url>http://www.ibiblio.org/maven/poi</url>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.8</version>
+      <url>http://www.ibiblio.org/maven/log4j</url>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <url>http://www.ibiblio.org/maven/junit</url>
+    </dependency>
+    <dependency>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>2.0-rc2</version>
+      <url>http://www.ibiblio.org/maven/commons-httpclient</url>
+    </dependency>
+    <dependency>
+      <groupId>openide</groupId>
+      <artifactId>openide</artifactId>
+      <version>1.0</version>
+      <url>${sandbox.url}repository/openide</url>
+    </dependency>
+    <dependency>
+      <groupId>abolutelayout</groupId>
+      <artifactId>absolutelayout</artifactId>
+      <version></version>
+      <url>http://www.ibiblio.org/maven/commons-httpclient</url>
+    </dependency>
+    <dependency>
+      <groupId>RETS</groupId>
+      <artifactId>rets</artifactId>
+      <version></version>
+      <url>http://www.ibiblio.org/maven/commons-httpclient</url>
+    </dependency>
+    <dependency>
+      <groupId>RETS Client</groupId>
+      <artifactId>retsClient</artifactId>
+      <version></version>
+      <url>http://www.ibiblio.org/maven/commons-httpclient</url>
+    </dependency>
+    <dependency>
+      <groupId>Java Mail</groupId>
+      <artifactId>mail</artifactId>
+      <version></version>
+      <url>http://www.ibiblio.org/maven/commons-httpclient</url>
+    </dependency>
+  </dependencies>
+
+  <build>
+
+    <nagEmailAddress>
+      rets@avantia-inc.com
+    </nagEmailAddress>
+
+    <sourceDirectory>${basedir}/src</sourceDirectory>
+
+    <unitTestSourceDirectory>${basedir}/src/test</unitTestSourceDirectory>
+
+    <aspectSourceDirectory/>
+
+    <!-- Unit test cases -->
+    <unitTest>
+      <includes>
+        <include>**/*Test.java</include>
+      </includes>
+      <excludes>
+        <exclude>**/RepositoryTest.java</exclude>
+      </excludes>
+    </unitTest>
+              
+    <!-- J A R  R E S O U R C E S -->
+    <!-- Resources that are packaged up inside the JAR file -->
+    <resources>
+      <resource>
+        <directory>${basedir}/src/resources/misc</directory>
+        <includes>
+          <include>*.xsd</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/config</directory>
+        <includes>
+          <include>log4j.properties</include>
+        </includes>
+      </resource>
+    </resources>
+
+    <!-- Integration unit test cases -->
+    <integrationUnitTest/>
+
+    <jars>
+    </jars>
+  </build>
+</project>

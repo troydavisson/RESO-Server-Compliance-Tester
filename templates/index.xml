@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<document>
+  <properties>
+    <title>RETS Server Compliance Checker</title>
+  </properties>
+  <body>
+    <section name="RETS Server Compliance Checker">
+      <p>
+        The RETS Server Compliance Checker is the NAR's official certification
+        tool used to test RETS Servers for compliance to both the 
+    1.0 and 1.5 versions of the RETS Specification.  The compliance checker
+    contains test scripts for the following 1.0 and 1.5 RETS transactions:
+        <ul>
+          <li>Login</li>
+          <li>Logout</li>
+          <li>ChangePassword</li>
+          <li>Action</li>
+          <li>GetMetadata</li>
+          <li>Search</li>
+          <li>Update</li>
+          <li>GetObject</li>
+        </ul>
+      </p>
+    </section> 
+    <section name="Technical Notes">
+      <p>
+        The RETS Server Compliance Checker is a desktop application written in Java using Swing 
+        as its GUI. It uses the RETS Reference Implementation Java RETS API to connect to 
+        RETS Servers.  All scripts are written in XML and are parameter-driven.
+        Test Evaluators are Java classes.  All scripts and test evaluators are
+        easily extensible and customizable. The compliance checker application is 
+designed to run on both Windows and Unix platforms.   
+      </p>
+    </section>
+  </body>
+</document>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+	<TestName>NegativeTestingGetObject</TestName>
+	<TestDescription>Negative Testing for GetObject Transaction</TestDescription>
+	<GetObjectTransaction>
+		<TransactionLabel>Invalid Resource Get Object</TransactionLabel>
+		<Resource>RETSNegativeTesting</Resource>
+		<Type>${GetObject.Type}</Type>
+		<ID>${GetObject.Id}</ID>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.InvalidResourceGetObject</JavaClassName>
+	</TestEvaluators>
+	</GetObjectTransaction>
+	<GetObjectTransaction>
+		<TransactionLabel>Invalid Type Get Object</TransactionLabel>
+		<Resource>${GetObject.Resource}</Resource>
+		<Type>RETSNegativeTesting</Type>
+		<ID>${GetObject.Id}</ID>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.InvalidTypeGetObject</JavaClassName>
+	</TestEvaluators>
+	</GetObjectTransaction>
+<TestEvaluators>
+	<JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+	<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectOptionalResponseHeaders</JavaClassName>
+	<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectResponseHeaders</JavaClassName>
+</TestEvaluators>
+
+</RETSComplianceTest>

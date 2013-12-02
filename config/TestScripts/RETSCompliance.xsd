@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Tom Weber (Avantia, Inc.) -->
+<xs:schema targetNamespace="http://www.avantia-inc.com/RETSComplianceTest" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.avantia-inc.com/RETSComplianceTest" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="RETSComplianceTest">
+    <xs:annotation>
+      <xs:documentation>Root element for the RETS Compliance Schema</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TestName"/>
+        <xs:element name="TestDescription"/>
+        <xs:element name="ActionTransaction" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransactionLabel" type="xs:string" nillable="false"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GetMetadataTransaction" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransactionLabel" type="xs:string" nillable="false"/>
+              <xs:element name="Type" type="metadataTypes"/>
+              <xs:element name="ID" type="xs:string"/>
+              <xs:element name="Format" type="replyFormats"/>
+              <xs:element name="Version" type="xs:string"/>
+              <xs:element name="Date" type="xs:string"/>
+              <xs:element name="System" type="xs:string"/>
+              <xs:element name="Resource" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SearchTransaction" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransactionLabel" type="xs:string" nillable="false"/>
+              <xs:element name="SearchType" type="searchTypes"/>
+              <xs:element name="SearchClass" type="xs:string"/>
+              <xs:element name="Query" type="xs:string" minOccurs="0"/>
+              <xs:element name="DynamicQueryGenerationMethod" type="ExternalMethodCall" minOccurs="0"/>
+              <xs:element name="QueryType" type="queryTypes"/>
+              <xs:element name="FieldDelimiter" type="xs:short" minOccurs="0"/>
+              <xs:element name="Select" type="xs:string" minOccurs="0"/>
+              <xs:element name="FieldSelectionMethod" type="ExternalMethodCall" minOccurs="0"/>
+              <xs:element name="Count" type="countOptions" minOccurs="0"/>
+              <xs:element name="Format" type="replyFormats" minOccurs="0"/>
+              <xs:element name="Limit" type="xs:integer" minOccurs="0"/>
+              <xs:element name="Offset" type="xs:integer" minOccurs="0"/>
+              <xs:element name="RestrictedIndicator" type="xs:string" minOccurs="0"/>
+              <xs:element name="StandardNames" type="standardNameOptions" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LogoutTransaction" minOccurs="0"/>
+        <xs:element name="TestEvaluators">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="JavaClassName" type="xs:string" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="searchTypes">
+    <xs:annotation>
+      <xs:documentation> Possible Search Types</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="ActiveAgent"/>
+      <xs:enumeration value="Agent"/>
+      <xs:enumeration value="History"/>
+      <xs:enumeration value="Office"/>
+      <xs:enumeration value="OpenHouse"/>
+      <xs:enumeration value="Property"/>
+      <xs:enumeration value="Prospect"/>
+      <xs:enumeration value="Tax"/>
+      <xs:enumeration value="Tour"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="countOptions">
+    <xs:annotation>
+      <xs:documentation>What type of coun is returned</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="standardNameOptions">
+    <xs:annotation>
+      <xs:documentation>Use standard or system names</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="queryTypes">
+    <xs:annotation>
+      <xs:documentation> Possible query languages</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="DMQL"/>
+      <xs:enumeration value="DMQL2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="replyFormats">
+    <xs:annotation>
+      <xs:documentation> Possible reply formats</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="COMPACT"/>
+      <xs:enumeration value="COMPACT-DECODED"/>
+      <xs:enumeration value="STANDARD-XML"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="metadataTypes">
+    <xs:annotation>
+      <xs:documentation> Possible Metadata Types</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="METADATA-SYSTEM"/>
+      <xs:enumeration value="METADATA-RESOURCE"/>
+      <xs:enumeration value="METADATA-CLASS"/>
+      <xs:enumeration value="METADATA-TABLE"/>
+      <xs:enumeration value="METADATA-UPDATE"/>
+      <xs:enumeration value="METADATA-UPDATE_TYPE"/>
+      <xs:enumeration value="METADATA-OBJECT"/>
+      <xs:enumeration value="METADATA-SEARCH_HELP"/>
+      <xs:enumeration value="METADATA-UPDATE_HELP"/>
+      <xs:enumeration value="METADATA-EDITMASK"/>
+      <xs:enumeration value="METADATA-LOOKUP"/>
+      <xs:enumeration value="METADATA-LOOKUP_TYPE"/>
+      <xs:enumeration value="METADATA-VALIDATION_LOOKUP"/>
+      <xs:enumeration value="METADATA-VALIDATION_LOOKUP_TYPE"/>
+      <xs:enumeration value="METADATA-VALIDATION_EXPRESSION"/>
+      <xs:enumeration value="METADATA-VALIDATION_EXTERNAL"/>
+      <xs:enumeration value="METADATA-VALIDATION_EXTERNAL_TYPE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ExternalMethodCall">
+    <xs:sequence>
+      <xs:element name="JavaClassName" type="xs:string"/>
+      <xs:element name="MethodName" type="xs:string"/>
+      <xs:element name="TransactionPassed" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,493 @@
+<!--   Real Estate Transaction Specification (RETS) Metadata DTD  -->
+<!--
+	submitted by:
+	Leo Bijnagte
+	Vista Information Solutions, Inc.
+	Version 1.0  10/01/2000
+	Version 1.5  10/15/2002 Bruce Toback
+	Version 1.7  09/13/2004 Bruce Toback
+	Version 1.7.2	08/29/2008 Gina Accawi, Falcon Technologies
+						Format dates to include timezone offset.
+						Add attribute for ClassDate, 
+						ValidationLookupDate to indicate date time
+						Removed unneeded, redundant OR in Field element definition
+						Rename ModTimeStampName make ModTimeStamp per spec
+						Add MetadataEntryID to Object element sequence, remove StandardName
+						Add MetadataEntryID to SearchHelp sequence
+						Rename ValidationExternal attribute to ValidationExternalName per spec
+						Rename System element to SYSTEM. Put child elements as attributes per spec
+						Rename METADATA-FOREIGN_KEY to METADATA-FOREIGN_KEYS, add attlist Version and Date for METADATA-FOREIGN_KEYS
+						Remove System attribute from METADATA-CLASS
+						Reorder attributes for consistency with compact metadata and spec
+						METADATA-LOOKUP has an element Lookup and METADATA-LOOKUP_TYPE has an element LookupType
+						METADATA-VALIDATION_LOOKUP has an element ValidationLookup and METADATA-VALIDATION-LOOKUP_TYPE has an element ValidationLookupType 
+						METADATA-VALIDATION_EXTERNAL has an element ValidationExternal and METADATA-VALIDATION_EXTERNAL_TYPE has element ValidationExternalType
+	Version 1.8  11/01/2012 Libor Viktorin
+
+    See http://www.rets.org for more information.
+    
+    This DTD is identified by PUBLIC and SYSTEM identifiers:
+    
+    PUBLIC "-//RETS//DTD Metadata Content 1.8//EN"
+    SYSTEM "http://www.rets.org/dtd/2008/08/rets-metadata-content-1_8.dtd"
+    
+    ==========================================================================
+    This material is provided AS-IS. The authors, copyright holders and
+    standards-body contributors to this specification  (hereinafter
+    "CONTRIBUTORS") make no representation or warranty, express or implied,
+    including but not limited to warranties of merchantability, fitness for
+    any purpose whatsoever, title or non-infringement; that the
+    contents of this specification and its associated codes, documentation
+    and ancillary materials are free from error, nor that these materials 
+    will not infringe any third-party patents, copyrights, trademarks or
+    other rights. In no event will CONTRIBUTORS be liable to any party for
+    any direct, indirect, special or consequential damages for any use of
+    this material, including without limitation lost profits, business
+    interruption, loss of programs or other data on any information handling
+    system, even if any of the CONTRIBUTORS, individually or otherwise, have
+    been advised of the possibility of such damages.
+    ==========================================================================
+-->
+<!-- EXTENSION ELEMENT -->
+<!ELEMENT EXTENSION ANY >
+<!ATTLIST EXTENSION
+Version CDATA #REQUIRED
+Container CDATA #REQUIRED
+Content CDATA #REQUIRED >
+<!-- PROPRIETARY ELEMENTS -->
+<!ELEMENT PROPRIETARY (#PCDATA) >
+
+<!-- BASIC ELEMENTS -->
+<!ELEMENT MetadataEntryID (#PCDATA) >
+<!ELEMENT StandardName (#PCDATA) >
+<!ELEMENT VisibleName (#PCDATA) >
+<!ELEMENT Description (#PCDATA) >
+<!ELEMENT KeyField (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+
+<!-- SYSTEM ELEMENTS -->
+<!-- <!ELEMENT SystemDescription (#PCDATA)> -->
+<!-- <!ELEMENT SystemID (#PCDATA)> --> <!-- 1.7.2 Make system desc and id attributes to match spec -->
+<!ELEMENT Comments (#PCDATA)>
+
+<!-- RESOURCE ELEMENTS -->
+<!ELEMENT ResourceID (#PCDATA) >
+<!ELEMENT ClassCount (#PCDATA) >
+<!ATTLIST ClassCount
+Type CDATA #FIXED "INTEGER" >
+<!ELEMENT ClassVersion (#PCDATA)>
+<!ELEMENT ClassDate (#PCDATA)>
+<!ATTLIST ClassDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!ELEMENT ObjectVersion (#PCDATA)>
+<!ELEMENT ObjectDate (#PCDATA)>
+<!ATTLIST ObjectDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!ELEMENT SearchHelpVersion (#PCDATA)>
+<!ELEMENT SearchHelpDate (#PCDATA)>
+<!ATTLIST SearchHelpDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!ELEMENT EditMaskVersion (#PCDATA)>
+<!ELEMENT EditMaskDate (#PCDATA)>
+<!ATTLIST EditMaskDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!ELEMENT LookupVersion (#PCDATA)>
+<!ELEMENT LookupDate (#PCDATA)>
+<!ATTLIST LookupDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!ELEMENT UpdateHelpVersion (#PCDATA)>
+<!ELEMENT UpdateHelpDate (#PCDATA)> 
+<!ATTLIST UpdateHelpDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!ELEMENT ValidationExpressionVersion (#PCDATA)>
+<!ELEMENT ValidationExpressionDate (#PCDATA)>
+<!ATTLIST ValidationExpressionDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!ELEMENT ValidationExternalVersion (#PCDATA)>
+<!ELEMENT ValidationExternalDate (#PCDATA)>
+<!ATTLIST ValidationExternalDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!-- END RESOURCE ELEMENTS -->
+
+<!-- FOREIGN_KEY ELEMENTS -->
+<!ELEMENT ForeignKeyID (#PCDATA)>
+<!ELEMENT ParentResourceID (#PCDATA)>
+<!ELEMENT ParentClassID (#PCDATA)>
+<!ELEMENT ParentSystemName (#PCDATA)>
+<!ELEMENT ChildResourceID (#PCDATA)>
+<!ELEMENT ChildClassID (#PCDATA)>
+<!ELEMENT ChildSystemName (#PCDATA)>
+<!ELEMENT ConditionalParentField (#PCDATA)>  <!-- V1.7 -->
+<!ELEMENT ConditionalParentValue (#PCDATA)>  <!-- V1.7 -->
+<!ELEMENT OneToManyFlag (#PCDATA)>  <!-- V1.8 -->
+<!-- END FOREIGN_KEY ELEMENTS -->
+
+<!-- FILTER ELEMENTS -->
+<!ELEMENT FilterID (#PCDATA)>
+<!ELEMENT ParentResource (#PCDATA)>
+<!ELEMENT ParentLookupName (#PCDATA)>
+<!ELEMENT ChildResource (#PCDATA)>
+<!ELEMENT ChildLookupName (#PCDATA)>
+<!ELEMENT NotShownByDefault (#PCDATA)>
+<!ELEMENT FilterTypeVersion (#PCDATA)>
+<!ELEMENT FilterTypeDate (#PCDATA)>
+<!ATTLIST FilterTypeDate
+	Type CDATA #FIXED "DATE-TIME"
+	Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!-- END FILTER ELEMENTS -->
+
+<!-- FILTER_TYPE ELEMENTS -->
+<!ELEMENT FilterTypeID (#PCDATA)>
+<!ELEMENT ParentValue (#PCDATA)>
+<!ELEMENT ChildValue (#PCDATA)>
+<!-- FILTER_TYPE ELEMENTS -->
+
+<!-- CLASS ELEMENTS -->
+<!ELEMENT ClassName (#PCDATA)>
+<!ELEMENT TableVersion (#PCDATA)>
+<!ELEMENT TableDate (#PCDATA)>
+<!ATTLIST TableDate
+	Type CDATA #FIXED "DATE-TIME"
+	Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!ELEMENT UpdateVersion (#PCDATA)>
+<!ELEMENT UpdateDate (#PCDATA)>
+<!ATTLIST UpdateDate
+	Type CDATA #FIXED "DATE-TIME"
+	Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!ELEMENT ClassTimeStamp (#PCDATA)>     <!-- V1.7 -->
+<!ELEMENT DeletedFlagField (#PCDATA)>   <!-- V1.7 -->
+<!ELEMENT DeletedFlagValue (#PCDATA)>   <!-- V1.7 -->
+<!ELEMENT HasKeyIndex (#PCDATA) >		 <!-- V1.7.2 -->
+<!ELEMENT OffsetSupport (#PCDATA)>
+<!-- END CLASS ELEMENTS -->
+
+<!-- TABLE ELEMENTS -->
+<!ELEMENT SystemName (#PCDATA)>
+<!ELEMENT LongName (#PCDATA)>
+<!ELEMENT DBName (#PCDATA)>
+<!ELEMENT ShortName (#PCDATA)>
+<!ELEMENT MaximumLength (#PCDATA)>
+<!ATTLIST MaximumLength
+	Type CDATA #FIXED "INTEGER" >
+<!ELEMENT DataType (#PCDATA)>
+<!ELEMENT Precision (#PCDATA)>
+<!ATTLIST Precision
+	Type CDATA #FIXED "INTEGER" >
+<!ELEMENT Searchable (#PCDATA)>
+<!ELEMENT Interpretation (#PCDATA)>
+<!ELEMENT Alignment (#PCDATA)>
+<!ELEMENT UseSeparator (#PCDATA)>
+<!ELEMENT EditMaskID (#PCDATA)>
+<!ELEMENT LookupName (#PCDATA)>
+<!ELEMENT MaxSelect (#PCDATA)>
+<!ATTLIST MaxSelect
+	Type CDATA #FIXED "INTEGER" >
+<!ELEMENT Units (#PCDATA)>
+<!ELEMENT Index (#PCDATA)>
+<!ELEMENT Minimum (#PCDATA)>
+<!ATTLIST Minimum
+	Type CDATA #FIXED "INTEGER" >
+<!ELEMENT Maximum (#PCDATA)>
+<!ATTLIST Maximum
+	Type CDATA #FIXED "INTEGER" >
+<!ELEMENT Default (#PCDATA)>
+<!ELEMENT Required (#PCDATA)>
+<!ATTLIST Required
+	Type CDATA #FIXED "INTEGER" >
+<!ELEMENT SearchHelpID (#PCDATA)>
+<!ELEMENT Unique (#PCDATA)>
+<!ELEMENT ModTimeStamp (#PCDATA)> <!-- V1.7 -->
+<!ELEMENT ForeignKeyName (#PCDATA)>   <!-- V1.7 -->
+<!ELEMENT ForeignField (#PCDATA)>     <!-- V1.7 -->
+<!ELEMENT KeyQuery (#PCDATA)>     
+<!ELEMENT KeySelect (#PCDATA)>       
+<!ELEMENT InKeyIndex (#PCDATA)>			<!-- V1.7.2 -->
+<!ELEMENT FilterParentField (#PCDATA)>
+<!ELEMENT DefaultSearchOrder (#PCDATA)>
+<!ELEMENT Case (#PCDATA)>
+<!-- END TABLE ElEMENTS-->
+
+<!-- UPDATE ELEMENTS -->
+<!ELEMENT UpdateAction (#PCDATA)>
+<!ELEMENT UpdateTypeVersion (#PCDATA)>
+<!ELEMENT UpdateTypeDate (#PCDATA)>
+<!ATTLIST UpdateTypeDate
+	Type CDATA #FIXED "DATE-TIME"
+	Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!ELEMENT RequiresBegin (#PCDATA)>
+<!-- END UPDATE ELEMENTS -->
+
+<!-- UPDATE_TYPE ELEMENTS -->
+<!ELEMENT Sequence (#PCDATA)>
+<!ELEMENT Attributes (#PCDATA)>
+<!ELEMENT ValidationExpressionID (#PCDATA)>
+<!ELEMENT UpdateHelpID (#PCDATA)>
+<!ELEMENT ValidationLookupName (#PCDATA)>
+<!ELEMENT ValidationExternalName (#PCDATA)>
+<!ELEMENT MaxUpdate (#PCDATA)>      <!-- V1.7 -->
+<!ELEMENT SearchResultOrder (#PCDATA)>
+<!ELEMENT SearchQueryOrder (#PCDATA)>
+<!-- END UPDATE_TYPE ELEMENTS -->
+
+<!-- OBJECT ELEMENTS -->
+<!ELEMENT ObjectType (#PCDATA)>
+<!ELEMENT MimeType (#PCDATA)>
+<!ELEMENT ObjectTimeStamp (#PCDATA)>   <!-- V1.7 -->
+<!ELEMENT ObjectCount (#PCDATA)>       <!-- V1.7 -->
+<!ELEMENT LocationAvailability (#PCDATA)>
+<!ELEMENT PostSupport (#PCDATA)>
+<!ELEMENT ObjectData (#PCDATA)>
+<!ELEMENT MaxFileSize (#PCDATA)>
+<!-- END OBJECT ELEMENTS -->
+
+<!-- LOOKUP ELEMENTS -->
+<!ELEMENT LookupTypeVersion (#PCDATA)>
+<!ELEMENT LookupTypeDate (#PCDATA)>
+<!ATTLIST LookupTypeDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss]" >
+<!-- END LOOKUP ELEMENTS -->
+<!-- LOOKUP_TYPE ELEMENTS -->
+<!ELEMENT LongValue (#PCDATA)>
+<!ELEMENT ShortValue (#PCDATA)>
+<!-- LOOKUP_TYPE ELEMENTS -->
+<!-- VALIDATION_LOOKUP ELEMENTS -->
+<!ELEMENT Parent1Field (#PCDATA)>
+<!ELEMENT Parent2Field (#PCDATA)>
+<!ELEMENT ValidationLookupVersion (#PCDATA)>
+<!ELEMENT ValidationLookupDate (#PCDATA)>
+<!ATTLIST ValidationLookupDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!-- END VALIDATION_LOOKUP ELEMENTS -->
+
+<!--VALIDATION_LOOKUP_TYPE ELEMENTS -->
+<!ELEMENT ValidText (#PCDATA)>
+<!ELEMENT Parent1Value (#PCDATA)>
+<!ELEMENT Parent2Value (#PCDATA)>
+<!-- END VALIDATION_LOOKUP_TYPE ELEMENTS -->
+<!-- VALIDATION_EXPRESSION ELEMENTS -->
+<!ELEMENT ValidationExpressionType (#PCDATA)>
+<!ELEMENT Message (#PCDATA)>
+<!ELEMENT IsCaseSensitive (#PCDATA)>
+<!-- END VALIDATION_EXPRESSION ELEMENTS -->
+<!-- VALIDATION_EXTERNAL ELEMENTS -->
+<!ELEMENT SearchResource (#PCDATA)>
+<!ELEMENT SearchClass (#PCDATA)>
+<!ELEMENT ValidationExternalTypeVersion (#PCDATA)>
+<!ELEMENT ValidationExternalTypeDate (#PCDATA)>
+<!ATTLIST ValidationExternalTypeDate
+Type CDATA #FIXED "DATE-TIME"
+Format CDATA #FIXED "YYYY-MM-DDThh:mm:ss[.sss][Z|±hh:mm]" >
+<!-- END VALIDATION_EXTERNAL ELEMENTS -->
+
+<!-- VALIDATION_EXTERNAL_TYPE ELEMENTS -->
+<!ELEMENT SearchField (#PCDATA)>
+<!ELEMENT DisplayField (#PCDATA)>
+<!ELEMENT Source (#PCDATA)>
+<!ELEMENT Target (#PCDATA)>
+<!-- END VALIDATION_EXTERNAL_TYPE ELEMENTS -->
+
+<!ELEMENT METADATA (METADATA-SYSTEM? | METADATA-RESOURCE? | METADATA-CLASS+ | 
+	METADATA-TABLE+ | METADATA-UPDATE+ | METADATA-UPDATE_TYPE+ |  
+	METADATA-OBJECT+ | METADATA-SEARCH_HELP+ | METADATA-UPDATE_HELP+ | 
+	METADATA-EDITMASK+ | METADATA-LOOKUP+ | METADATA-LOOKUP_TYPE+ | 
+	METADATA-VALIDATION_LOOKUP+ | METADATA-VALIDATION_LOOKUP_TYPE+ | 
+	METADATA-VALIDATION_EXPRESSION+ | METADATA-VALIDATION_EXTERNAL+ | 
+	METADATA-VALIDATION_EXTERNAL_TYPE+ | METADATA-FOREIGN_KEYS? |
+	METADATA-FILTER? | METADATA-FILTER_TYPE+ |
+	EXTENSION+ | PROPRIETARY+)>
+<!ELEMENT METADATA-SYSTEM (SYSTEM)>
+<!ATTLIST METADATA-SYSTEM
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED>
+<!ATTLIST SYSTEM 
+	SystemID CDATA #REQUIRED
+	SystemDescription CDATA #REQUIRED
+	TimeZoneOffset CDATA #IMPLIED
+	MetadataID CDATA #IMPLIED>
+<!ELEMENT SYSTEM (Comments?, METADATA-RESOURCE?,
+	METADATA-FOREIGN_KEYS?, EXTENSION*, PROPRIETARY*)>
+<!ELEMENT METADATA-RESOURCE (Resource+)>
+<!ATTLIST METADATA-RESOURCE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED>
+	
+<!ELEMENT Resource (ResourceID, StandardName, VisibleName, Description, KeyField, 
+	ClassCount, ClassVersion, ClassDate, ObjectVersion, ObjectDate, SearchHelpVersion, 
+	SearchHelpDate, EditMaskVersion, EditMaskDate, LookupVersion, LookupDate, 
+	UpdateHelpVersion, UpdateHelpDate, ValidationExpressionVersion, 
+	ValidationExpressionDate, ValidationLookupVersion, ValidationLookupDate, 
+	ValidationExternalVersion, ValidationExternalDate, METADATA-CLASS*, 
+	METADATA-OBJECT?, METADATA-SEARCH_HELP?, METADATA-EDITMASK?, METADATA-LOOKUP?, 
+	METADATA-UPDATE_HELP?, METADATA-VALIDATION_LOOKUP?, METADATA-VALIDATION_EXPRESSION?, 
+	METADATA-VALIDATION_EXTERNAL?, EXTENSION*, PROPRIETARY*)>
+	
+<!ELEMENT METADATA-FOREIGN_KEYS (ForeignKey+)>
+<!ATTLIST METADATA-FOREIGN_KEYS
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED>
+<!ELEMENT ForeignKey (ForeignKeyID, ParentResourceID, ParentClassID?,
+	ParentSystemName, ChildResourceID, ChildClassID?, ChildSystemName, 
+	ConditionalParentField?, ConditionalParentValue?, OneToManyFlag)>  <!-- V 1.7 -->
+
+<!ELEMENT METADATA-FILTER (Filter+)>
+<!ATTLIST METADATA-FILTER
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED>
+<!ELEMENT Filter (FilterID, ParentResource, ParentLookupName,
+	ChildResource, ChildLookupName, NotShownByDefault?, FilterTypeVersion, FilterTypeDate, METATADA-FILTER_TYPE, 
+	EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-FILTER_TYPE (FilterType+)>
+<!ATTLIST METADATA-FILTER
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Filter CDATA #REQUIRED>
+<!ELEMENT FilterType (FilterTypeID, ParentValue, ChildValue, EXTENSION* , PROPRIETARY*)>
+	
+<!ELEMENT METADATA-CLASS (Class+)>
+<!ATTLIST METADATA-CLASS
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+    System CDATA #IMPLIED
+	Resource CDATA #REQUIRED>
+<!ELEMENT Class (ClassName, StandardName, VisibleName, Description, TableVersion, 
+	TableDate, UpdateVersion, UpdateDate, ClassTimeStamp?, DeletedFlagField?, 
+	DeletedFlagValue?, HasKeyIndex?, OffsetSupport? , METADATA-TABLE? , METADATA-UPDATE? , 
+	EXTENSION*, PROPRIETARY*)>
+	
+<!ELEMENT METADATA-TABLE (Field+)>
+<!ATTLIST METADATA-TABLE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED
+	Class CDATA #REQUIRED>
+<!ELEMENT Field (MetadataEntryID, SystemName, StandardName, LongName, DBName, 
+	ShortName, MaximumLength, DataType, Precision, Searchable, Interpretation, 
+	Alignment, UseSeparator, EditMaskID, LookupName, MaxSelect, Units, Index, Minimum, 
+	Maximum, Default, Required, SearchHelpID, Unique, ModTimeStamp?, ForeignKeyName?, 
+	ForeignField?, KeyQuery?, KeySelect?, InKeyIndex, FilterParentField, DefaultSearchOrder,Case,
+  EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-UPDATE (UpdateType+)>
+<!ATTLIST METADATA-UPDATE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED
+	Class CDATA #REQUIRED>
+<!ELEMENT UpdateType (MetadataEntryID, UpdateAction, Description, KeyField, 
+	UpdateTypeVersion, UpdateTypeDate, RequiresBegin?, METADATA-UPDATE_TYPE? , EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-UPDATE_TYPE (UpdateField+)>
+<!ATTLIST METADATA-UPDATE_TYPE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED
+	Class CDATA #REQUIRED
+	Update CDATA #REQUIRED>
+<!ELEMENT UpdateField (MetadataEntryID, SystemName, Sequence, Attributes, Default, 
+	ValidationExpressionID, UpdateHelpID, ValidationLookupName, ValidationExternalName, 
+	MaxUpdate?, SearchResultOrder?, SearchQueryOrder?, EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-OBJECT (Object+)>
+<!ATTLIST METADATA-OBJECT
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED>
+<!ELEMENT Object (MetadataEntryID, ObjectType, MimeType, VisibleName, Description, 
+	ObjectTimeStamp?, ObjectCount?, LocationAvailability, PostSupport, ObjectData, MaxFileSize, EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-LOOKUP (Lookup+)>
+<!ATTLIST METADATA-LOOKUP
+	Version CDATA #REQUIRED
+   Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED>
+<!ELEMENT Lookup (MetadataEntryID, LookupName, VisibleName, LookupTypeVersion, 
+	LookupTypeDate, FilterID?, NotShownByDefault?, METADATA-LOOKUP_TYPE? , EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-LOOKUP_TYPE (LookupType+)>
+<!ATTLIST METADATA-LOOKUP_TYPE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED
+	Lookup CDATA #REQUIRED>
+<!ELEMENT LookupType (MetadataEntryID, LongValue, ShortValue, Value, EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-SEARCH_HELP (SearchHelp+)>
+<!ATTLIST METADATA-SEARCH_HELP
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED>
+<!ELEMENT SearchHelp (MetadataEntryID, SearchHelpID, Value, EXTENSION*, PROPRIETARY*)>
+<!ELEMENT METADATA-EDITMASK (EditMask+)>
+<!ATTLIST METADATA-EDITMASK
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED>
+<!ELEMENT EditMask (MetadataEntryID, EditMaskID, Value, EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-UPDATE_HELP (UpdateHelp+)>
+<!ATTLIST METADATA-UPDATE_HELP
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED>
+<!ELEMENT UpdateHelp (MetadataEntryID, UpdateHelpID, Value, EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-VALIDATION_LOOKUP (ValidationLookup+)>
+<!ATTLIST METADATA-VALIDATION_LOOKUP
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED>
+<!ELEMENT ValidationLookup (MetadataEntryID, ValidationLookupName, Parent1Field, 
+	Parent2Field, ValidationLookupVersion, ValidationLookupDate, METADATA-VALIDATION_LOOKUP_TYPE?,
+	EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-VALIDATION_LOOKUP_TYPE (ValidationLookupType+)>
+<!ATTLIST METADATA-VALIDATION_LOOKUP_TYPE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED
+	ValidationLookup CDATA #REQUIRED>
+<!ELEMENT ValidationLookupType (MetadataEntryID, ValidText, Parent1Value, Parent2Value, 
+	EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-VALIDATION_EXPRESSION (ValidationExpression+)>
+<!ATTLIST METADATA-VALIDATION_EXPRESSION
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED>
+<!ELEMENT ValidationExpression (MetadataEntryID, ValidationExpressionID, 
+	ValidationExpressionType, Value, Message, IsCaseSensitive, EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-VALIDATION_EXTERNAL (ValidationExternal+)>
+<!ATTLIST METADATA-VALIDATION_EXTERNAL
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED>
+<!ELEMENT ValidationExternal (MetadataEntryID, ValidationExternalName, 
+	SearchResource, SearchClass, ValidationExternalVersion, ValidationExternalDate, 
+	METADATA-VALIDATION_EXTERNAL_TYPE? , EXTENSION* , PROPRIETARY*)>
+<!ELEMENT METADATA-VALIDATION_EXTERNAL_TYPE (ValidationExternalType+)>
+<!ATTLIST METADATA-VALIDATION_EXTERNAL_TYPE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	System CDATA #IMPLIED
+	Resource CDATA #REQUIRED
+	ValidationExternalName CDATA #REQUIRED>
+<!ELEMENT ValidationExternalType (MetadataEntryID, SearchField+, DisplayField+, 
+	ResultFields+, EXTENSION* , PROPRIETARY*)>
+<!ELEMENT ResultFields (Source, Target, EXTENSION* , PROPRIETARY*)>

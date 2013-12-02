@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog text="Select Compliance Test"  height="0" width="0" modal="true" 
+         columns="8" top="4" left="4" bottom="4" right="4" gap="2">
+	<label text="Type:" colspan="1"/>
+	<combobox name="testName" colspan="5" valign="center" 
+                  text="tests/test1.xml"> 
+           <choice text="tests/test1.xml"/>
+           <choice text="tests/test2.xml"/>
+        </combobox>
+	
+	<button name="b_testdialog" 
+                text="Run test" tooltip="Runs the selected test..."
+                mnemonic="1" action="runComplianceTest" width="5" />        
+        
+        
+</dialog>

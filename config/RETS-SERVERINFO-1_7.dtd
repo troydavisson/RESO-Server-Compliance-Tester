@@ -1,0 +1,25 @@
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Paula OBrien (Avantia, Inc.) -->
+<!-- <!DOCTYPE RETS SYSTEM "RETS-SERVERINFO-1_7.dtd"> -->
+<!-- <!DOCTYPE RETS [ -->
+<!--   Real Estate Transaction Specification (RETS) DTD  -->
+<!--   Real Estate Transaction Markup Language (RETML)  -->
+<!--
+-->
+<!-- BASIC ELEMENTS -->
+<!--DATE/TIME ELEMENTS -->
+<!--see ISO 8601 for acceptable values for Format -->
+<!ATTLIST RETS
+	ReplyCode CDATA #REQUIRED
+	ReplyText CDATA #REQUIRED
+>
+<!ELEMENT Parameter (#PCDATA)>
+<!ATTLIST Parameter
+	name (CurrentTimeStamp | LastTimeStamp | MinimumLimit | KeyLimit | ReplicationSupport | CDATA) #REQUIRED
+	resource CDATA ""
+	class CDATA ""
+>
+<!ELEMENT ServerInformation (Parameter+)>
+<!-- COMPOUND ELEMENTS -->
+<!-- PACKAGING ELEMENTS -->
+<!ELEMENT RETS (ServerInformation)>
+<!-- ]> -->

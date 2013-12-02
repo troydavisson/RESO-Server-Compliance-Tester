@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+	<TestName>PostObject</TestName>
+	<TestDescription>Tests Negative PostObject Transaction</TestDescription>
+	<PostObjectTransaction>
+		<TransactionLabel>Invalid Resource PostObject</TransactionLabel>
+		<UpdateAction>${PostObject.UpdateAction}</UpdateAction>
+		<Type>${PostObject.Type}</Type>
+		<Resource>INVALIDRESOURCE</Resource>
+		<UploadFile>${PostObject.UploadFile}</UploadFile>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.InvalidResourcePostObject</JavaClassName>
+		</TestEvaluators>
+	</PostObjectTransaction>
+	<PostObjectTransaction>
+		<TransactionLabel>Invalid Type PostObject</TransactionLabel>
+		<UpdateAction>${PostObject.UpdateAction}</UpdateAction>
+		<Type>INVALIDTYPE</Type>
+		<Resource>${PostObject.Resource}</Resource>
+		<UploadFile>${PostObject.UploadFile}</UploadFile>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.InvalidTypePostObject</JavaClassName>
+		</TestEvaluators>
+	</PostObjectTransaction>
+		<PostObjectTransaction>
+		<TransactionLabel>Invalid Update Action PostObject</TransactionLabel>
+		<UpdateAction>INVALIDACTION</UpdateAction>
+		<Type>${PostObject.Type}</Type>
+		<Resource>${PostObject.Resource}</Resource>
+		<UploadFile>${PostObject.UploadFile}</UploadFile>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.InvalidActionPostObject</JavaClassName>
+		</TestEvaluators>
+	</PostObjectTransaction>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders18</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders18</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+	</TestEvaluators>
+</RETSComplianceTest>

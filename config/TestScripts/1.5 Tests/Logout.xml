@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+	<TestName>Logout</TestName>
+	<TestDescription>Tests Logout Transaction</TestDescription>
+	<LogoutTransaction>
+			<TransactionLabel>Logout Transaction</TransactionLabel>
+	</LogoutTransaction>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckLogoutOptArgs</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+	</TestEvaluators>
+</RETSComplianceTest>

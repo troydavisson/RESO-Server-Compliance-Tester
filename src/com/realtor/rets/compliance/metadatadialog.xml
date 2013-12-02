@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dialog text="metadata"  modal="true" columns="6" top="4" 
+         left="4" bottom="4" right="4" gap="4"  >
+	<label text="Type:" colspan="1"/>
+	<combobox name="type" colspan="5" valign="center" text="METADATA-TABLE"> 
+           <choice text="METADATA-SYSTEM"/>
+           <choice text="METADATA-RESOURCE"/>
+           <choice text="METADATA-CLASS"/>
+           <choice text="METADATA-TABLE"/>
+           <choice text="METADATA-UPDATE"/>
+           <choice text="METADATA-UPDATE_TYPE"/>
+           <choice text="METADATA-OBJECT"/>
+           <choice text="METADATA-SEARCH_HELP"/>
+           <choice text="METADATA-UPDATE_HELP"/>
+           <choice text="METADATA-EDITMASK"/>
+           <choice text="METADATA-LOOKUP"/>
+           <choice text="METADATA-LOOKUP_TYPE"/>
+           <choice text="METADATA-VALIDATION_LOOKUP"/>
+           <choice text="METADATA-VALIDATION_LOOKUP_TYPE"/>
+           <choice text="METADATA-VALIDATION_EXPRESSION"/>
+           <choice text="METADATA-VALIDATION_EXTERNAL"/>
+           <choice text="METADATA-VALIDATION_EXTERNAL_TYPE"/>
+        </combobox>
+	
+	<label text="ID :" />
+        <textfield name="id" colspan="5" valign="center" text="*"/>
+        <label text="Format :" />
+        <combobox name="format" colspan="5" valign="center"
+                      text="STANDARD-XML"> 
+          <choice text="STANDARD-XML"/>
+          <choice text="COMPACT"/>
+        </combobox>
+        <label text="Version :" />
+        <combobox name="version" colspan="5" valign="center"
+                      text="RETS/1.0"> 
+          <choice text="RETS/1.0"/>
+          <choice text="RETS/1.5"/>
+        </combobox>
+	<button name="b_logindialog" 
+                text="GetMetadata" tooltip="Get Metadata Transaction..."
+                mnemonic="1" action="metadataTransaction" width="5" />        
+        
+        
+</dialog>

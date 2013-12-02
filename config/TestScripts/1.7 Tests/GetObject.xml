@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+	<TestName>GetObject</TestName>
+	<TestDescription>Tests GetObject Transaction</TestDescription>
+	<GetObjectTransaction>
+		<TransactionLabel>GetObject</TransactionLabel>
+		<Resource>${GetObject.Resource}</Resource>
+		<Type>${GetObject.Type}</Type>
+		<ID>${GetObject.Id}:0</ID>
+	</GetObjectTransaction>
+	<GetObjectTransaction>
+		<TransactionLabel>GetObject</TransactionLabel>
+		<Resource>${GetObject.Resource}</Resource>
+		<Type>${GetObject.Type}</Type>
+		<ID>${GetObject.Id}:*</ID>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.CheckMultipartResponse</JavaClassName>
+		</TestEvaluators>
+	</GetObjectTransaction>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectHeaders</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectOptionalResponseHeaders</JavaClassName>
+	</TestEvaluators>
+</RETSComplianceTest>

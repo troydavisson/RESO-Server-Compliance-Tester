@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+	<TestName>ServerInformation</TestName>
+	<TestDescription>Tests ServerInformation Transaction</TestDescription>
+	<ServerInformationTransaction>
+		<TransactionLabel>ServerInformation</TransactionLabel>
+		<Resource>${ServerInformation.Resource}</Resource>
+		<ClassName>${ServerInformation.InfoClass}</ClassName>
+		<Validate>${ServerInformation.StandardNames}</Validate>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.ValidateServerInfoResponse17</JavaClassName>
+		</TestEvaluators>
+	</ServerInformationTransaction>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+	</TestEvaluators>
+</RETSComplianceTest>

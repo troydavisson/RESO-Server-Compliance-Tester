@@ -1,0 +1,181 @@
+<project name="retsCompliance" default="jar" basedir=".">
+
+    <!-- set global properties for this build -->
+    <property file="build.properties"/>
+
+    <!-- setup the required jar file and classes for compile -->
+    <path id="java.classpath">
+        <fileset dir="${lib}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="deploy" depends="compile" description="Main deploy target for this build. Files will be copied to $deploy dir for running the application">
+        <delete file="lib/RETSServerCompliance.jar"/>
+        <!-- All of the necessary files are copied to "your ${deploy} dir" for running/testing the app -->
+        <copy todir="${deploy}">
+            <fileset dir="." includes="*.bat"/>
+            <fileset dir="." includes="readme.txt"/>
+            <fileset dir="${build}" includes="**"/>            
+        </copy>
+        <copy todir="${deploy}/${lib}">
+            <fileset dir="${lib}" includes="*.jar"/>
+        </copy>
+        <copy todir="${deploy}/${config}">
+            <fileset dir="${config}" includes="**/*" excludes="log4j.properties"/>
+        </copy>
+<!--Also COPY necessary files are copied to "your ${root.config} dir" for running app -->        
+        <copy todir="${root.config}">
+            <fileset dir="${build}" includes="*.dtd"/>
+            <fileset dir="${config}" includes="*.properties"/>
+            <fileset dir="${config}" includes="**/*.xml"/>
+            <fileset dir="${config}" includes="**/*.dtd"/>
+        </copy>        
+    </target>
+    
+	<target name="jar" depends="deploy" description="Create Jar file for a 'binary' release of application">
+		<jar jarfile="${deploy}/lib/RETSServerCompliance.jar">
+			<fileset dir="${classes}"/>			
+		</jar>
+		<delete dir="${classes}"/>
+		<delete dir="${deploy}/classes"/>
+    </target>
+
+    <target name="clean" description="To clean up old Build directory.">
+        <delete dir="${build}"/>
+    </target>
+
+    <target name="cleanall" description="To clean up old Build AND deploy directories.">
+        <delete dir="${build}"/>
+        <delete dir="${deploy}"/>
+        <delete>
+        	<fileset dir="${root.config}" includes="**/*"/>
+        </delete>
+        
+    </target>
+
+    <target name="compile">
+        <!-- Compile the java code from ${src} into ${build} -->
+        <mkdir dir="${classes}"/>
+        <javac srcdir="${src}" destdir="${classes}" debug="on">
+            <classpath refid="java.classpath"/>
+            <exclude name="thinlet/examples/**"/>
+        </javac>
+		<copy todir="${classes}" >
+			<fileset dir="${src}">
+				<include name="*.dtd"/>
+			</fileset>
+        </copy>
+    </target>
+
+    <target name="copy.dtds">
+        <copy todir="${classes}" >
+            <fileset dir=".">
+                <include name="**.dtd"/>
+            </fileset>
+        </copy>
+        <copy todir="classes" >  <!-- for local ide execution -->
+            <fileset dir=".">
+                <include name="**.dtd"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="webstart.war.setup">
+        <mkdir dir="${war.build}"/>
+        <mkdir dir="${war.build}/app"/>
+        <mkdir dir="${war.build}/app/lib"/>
+        <mkdir dir="${war.build}/WEB-INF"/>
+        <mkdir dir="${war.build}/WEB-INF/lib"/>
+        <mkdir dir="${war.build}/WEB-INF/classes"/>
+        <copy todir="${war.build}/app/lib">
+            <fileset dir="${lib}">
+                <exclude name="**/*.java"/>
+                <exclude name="**/javaws.jar"/>
+            </fileset>
+        </copy>
+        <copy todir="${war.build}">
+            <fileset dir="${web}">
+                <exclude name="**/*.java"/>
+                <exclude name="**/*.class"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="webstart.retsservercompliance.jar" depends="compile, webstart.war.setup, copy.dtds, bundle.testscripts" >
+        <mkdir dir="${war.build}/app"/>
+        <copy todir="${classes}">
+            <fileset dir="${config}" includes="**/*"/>
+        </copy>
+        <jar jarfile="${war.build}/app/lib/RETSServerCompliance.jar">
+             <fileset dir="${classes}"/>
+        </jar>
+    </target>
+
+    <target name="webstart.retsservercompliance.war" depends="webstart.retsservercompliance.jar, webstart.sign.jars">
+        <!-- copy the jar/libs needed for the Retsservercompliance -->
+        <copy todir="${war.build}/WEB-INF">
+            <fileset dir="${web}/WEB-INF">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <jar jarfile="retsservercompliance.war">
+            <fileset dir="${war.build}"/>
+        </jar>
+
+    </target>
+
+<!--    <target name="webstart.copy2local" depends="webstart.retsservercompliance.jar, webstart.sign.jars">-->
+    <target name="webstart.copy2local" depends="webstart.retsservercompliance.war">
+        <!-- copy the jar/libs needed for the retsservercompliance -->
+        <copy todir="${LOCAL_TOMCAT_HOME}/webapps" file="retsservercompliance.war" />
+        <!-- copy the jar/libs needed for the retsservercompliance -->
+        <copy todir="${LOCAL_TOMCAT_HOME}/webapps/retsservercompliance">
+            <fileset dir="${war.build}">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="webstart.sign.jars">
+    <signjar
+		alias="avantia"
+		keystore="${KEYSTORE_FILE_PATH}"
+		storepass="${KEYSTORE_PASSWORD}">
+        <fileset dir="${war.build}/app/lib" includes="*.jar"/>
+    </signjar>
+    </target>
+
+    <target name="webstart.sign.RETSServerCompliance.jar">
+    <signjar
+		alias="avantia"
+		keystore="${KEYSTORE_FILE_PATH}"
+		storepass="${KEYSTORE_PASSWORD}"
+        jar="${war.build}/app/lib/RETSServerCompliance.jar" />
+    </target>
+
+   <target name="bundle.testscripts">
+       <jar jarfile="${war.build}/app/lib/testscripts.jar">
+           <fileset dir="${testscripts}"/>
+       </jar>
+   </target>
+
+    <target name="javadoc" description="To produce the documentation for retsCompliance app using JavaDoc.">
+        <javadoc packagenames="com.realtor.rets.*"
+            sourcepath="${src}"
+            defaultexcludes="yes"
+            destdir="doc"
+            classpathref="java.classpath"
+            author="true"
+            version="true"
+            use="true"
+            private="Yes"
+            windowtitle="RETS Compliance Platform">
+            <doctitle>
+                <![CDATA[<h1>RETS Compliance Platform</h1>]]></doctitle>
+            <bottom>
+                <![CDATA[<i>Copyright &#169; 2003 National Association of Realtors - All Rights Reserved.</i>]]></bottom>
+            <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+        </javadoc>
+    </target>
+</project>

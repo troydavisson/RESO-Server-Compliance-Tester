@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<panel columns="1" gap="4">
+	<tabbedpane name="tabbedpane" selected="0" action="tabChanged" weightx="1" weighty="1">
+		<tab text="Transaction Body" /> 
+		<panel columns="8" top="4" left="4" bottom="4" right="4" gap="4">
+                        <!-- <separator colspan="1"/> -->
+                        <label text="Available Functions  :             " />
+			<button name="b_logindialog" 
+                                text="Login" tooltip="Login..."  mnemonic="1" 
+                                action="showLoginDialog" width="5" />
+			<button name="b_actionTransaction" colspan="1"
+                                text="Action" tooltip="Perform Action Tranaction..."
+                                mnemonic="1" action="doActionTransaction" />                                
+			<button name="b_searchdialog"
+                                text="Search" tooltip="Search..."  mnemonic="1" 
+                                action="showSearchDialog" /> 
+			<button name="b_metadatadialog"
+                                text="Metadata" tooltip="Metadata..."  mnemonic="1" 
+                                action="showMetadataDialog" />
+			<button name="b_runtest"
+                                text="Tester" tooltip="ComplianceTest..."  mnemonic="1" 
+                                action="showTestCaseDialog" />
+			<button name="b_logoutdialog"
+                                text="Logout" tooltip="Logout..."  mnemonic="1" 
+                                action="doLogout" />
+                                
+                        
+                        <label weightx="1" />
+       			<textarea name="textarea" colspan="8" weighty="1" />
+		</panel>
+		<tab text="Headers" /> 
+		<panel columns="8" top="4" left="4" bottom="4" right="4" gap="4">
+                        <label text="Available Functions  :             " />
+			<button name="b_logindialog" 
+                                text="Login" tooltip="Login..."  mnemonic="1" 
+                                action="showLoginDialog" width="5" />
+			<button name="b_actionTransaction" colspan="1"
+                                text="Action" tooltip="Perform Action Tranaction..."
+                                mnemonic="1" action="doActionTransaction" />                                
+			<button name="b_searchdialog"
+                                text="Search" tooltip="Search..."  mnemonic="1" 
+                                action="showSearchDialog" /> 
+			<button name="b_metadatadialog"
+                                text="Metadata" tooltip="Metadata..."  mnemonic="1" 
+                                action="showMetadataDialog" />
+			<button name="b_runtest"
+                                text="Tester" tooltip="ComplianceTest..."  mnemonic="1" 
+                                action="showTestCaseDialog" />                                
+			<button name="b_logoutdialog"
+                                text="Logout" tooltip="Logout..."  mnemonic="1" 
+                                action="doLogout" />
+                        <!--<separator colspan=""/> -->
+			<label weightx="1" /> 
+       			<textarea name="headtextarea" text="Header values show up here"
+                                  colspan="8" weighty="1" />
+		</panel>
+		<tab text="Notes" /> 
+		<panel columns="8" top="4" left="4" bottom="4" right="4" gap="4">
+                        <label text="Available Functions  :             " />
+			<button name="b_logindialog" 
+                                text="Login" tooltip="Login..."  mnemonic="1" 
+                                action="showLoginDialog" width="5" />
+			<button name="b_actionTransaction" colspan="1"
+                                text="Action" tooltip="Perform Action Tranaction..."
+                                mnemonic="1" action="doActionTransaction" />                                
+			<button name="b_searchdialog"
+                                text="Search" tooltip="Search..."  mnemonic="1" 
+                                action="showSearchDialog" /> 
+			<button name="b_metadatadialog"
+                                text="Metadata" tooltip="Metadata..."  mnemonic="1" 
+                                action="showMetadataDialog" />
+			<button name="b_runtest"
+                                text="Tester" tooltip="ComplianceTest..."  mnemonic="1" 
+                                action="showTestCaseDialog" />                                                                
+			<button name="b_logoutdialog"
+                                text="Logout" tooltip="Logout..."  mnemonic="1" 
+                                action="doLogout" />
+                        
+			<label weightx="1" />
+       			<textarea name="notetextarea" text="Errors and Warnings shown here"
+                                  colspan="8" weighty="1" />
+		</panel>                                
+        </tabbedpane>
+</panel>

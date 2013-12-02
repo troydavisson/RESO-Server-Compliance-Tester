@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+	<TestName>GetPayloadList</TestName>
+	<TestDescription>Tests GetPayloadList Transaction</TestDescription>
+	<GetPayloadListTransaction>
+		<TransactionLabel>GetPayloadList</TransactionLabel>
+		<Id>${GetPayloadList.Id}</Id>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.ValidateGetPayloadListResponse18</JavaClassName>
+		</TestEvaluators>
+	</GetPayloadListTransaction>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders18</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders18</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+	</TestEvaluators>
+</RETSComplianceTest>

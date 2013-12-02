@@ -1,0 +1,176 @@
+<!--   Real Estate Transaction Specification (RETS) DTD  -->
+<!--
+	submitted by:
+	Leendert Bijnagte
+	Fidelity National Information Solutions, Inc.
+	Version 1.x  11/20/2001
+	
+	Revision 1.5: Leendert Bijnagte, Michael Del Gaudio
+	                      Edited by Bruce Toback
+	Revision 1.7.2: 	Gina Accawi, Falcon Technologies
+							2008/08/29
+							
+							Add TimeZoneOffset to SYSTEM attlist
+							Change EDIT_MASK to EDITMASK to match spec
+							Correct order of attributes
+							Correct switch between METADATA-VALIDATION_EXTERNAL_TYPE and METADATA-VALIDATION_EXTERNAL
+							
+							
+    See http://www.rets.org for more information.
+    
+    This DTD is identified by PUBLIC and SYSTEM identifiers:
+    
+    PUBLIC "-//RETS//DTD Compact Metadata 1.7.2//EN"
+    SYSTEM "http://www.rets.org/dtd/2008/08/rets-compact-metadata-1_7_2.dtd"
+    ==========================================================================
+    This material is provided AS-IS. The authors, copyright holders and
+    standards-body contributors to this specification  (hereinafter
+    "CONTRIBUTORS") make no representation or warranty, express or implied,
+    including but not limited to warranties of merchantability, fitness for
+    any purpose whatsoever, title or non-infringement; that the
+    contents of this specification and its associated codes, documentation
+    and ancillary materials are free from error, nor that these materials 
+    will not infringe any third-party patents, copyrights, trademarks or
+    other rights. In no event will CONTRIBUTORS be liable to any party for
+    any direct, indirect, special or consequential damages for any use of
+    this material, including without limitation lost profits, business
+    interruption, loss of programs or other data on any information handling
+    system, even if any of the CONTRIBUTORS, individually or otherwise, have
+    been advised of the possibility of such damages.
+    ==========================================================================
+-->
+<!-- BASIC ELEMENTS -->
+<!--DATE/TIME ELEMENTS -->
+<!--see ISO 8601 for acceptable values for Format -->
+<!ELEMENT METADATA-SYSTEM (SYSTEM+, COMMENTS?, COLUMNS?, DATA*)>
+<!ATTLIST METADATA-SYSTEM
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+>
+<!ELEMENT METADATA-RESOURCE (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-RESOURCE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+>
+<!ELEMENT METADATA-FOREIGNKEYS (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-FOREIGNKEYS
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+>
+<!ELEMENT METADATA-CLASS (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-CLASS
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+>
+<!ELEMENT METADATA-TABLE (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-TABLE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+	Class CDATA #IMPLIED
+>
+<!ELEMENT METADATA-UPDATE (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-UPDATE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+	Class CDATA #REQUIRED
+>
+<!ELEMENT METADATA-UPDATE_TYPE (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-UPDATE_TYPE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+	Class CDATA #REQUIRED
+	Update CDATA #REQUIRED
+>
+<!ELEMENT METADATA-OBJECT (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-OBJECT
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+>
+<!ELEMENT METADATA-LOOKUP (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-LOOKUP
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+>
+<!ELEMENT METADATA-LOOKUP_TYPE (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-LOOKUP_TYPE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+	Lookup CDATA #REQUIRED
+>
+<!ELEMENT METADATA-SEARCH_HELP (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-SEARCH_HELP
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+>
+<!ELEMENT METADATA-EDITMASK (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-EDITMASK
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+>
+<!ELEMENT METADATA-UPDATE_HELP (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-UPDATE_HELP
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+>
+<!ELEMENT METADATA-VALIDATION_LOOKUP (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-VALIDATION_LOOKUP
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+>
+<!ELEMENT METADATA-VALIDATION_LOOKUP_TYPE (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-VALIDATION_LOOKUP_TYPE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+	ValidationLookup CDATA #REQUIRED
+>
+<!ELEMENT METADATA-VALIDATION_EXPRESSION (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-VALIDATION_EXPRESSION
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+>
+<!ELEMENT METADATA-VALIDATION_EXTERNAL (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-VALIDATION_EXTERNAL
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+>
+<!ELEMENT METADATA-VALIDATION_EXTERNAL_TYPE (COLUMNS?, DATA*)>
+<!ATTLIST METADATA-VALIDATION_EXTERNAL_TYPE
+	Version CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Resource CDATA #REQUIRED
+	ValidationExternalName CDATA #REQUIRED
+>
+<!ELEMENT COMMENTS (#PCDATA)>
+<!ELEMENT SYSTEM (#PCDATA)>
+<!ATTLIST SYSTEM
+	SystemID CDATA #REQUIRED
+	SystemDescription CDATA #REQUIRED
+	TimeZoneOffset CDATA #IMPLIED
+>
+<!ELEMENT COLUMNS (#PCDATA)>
+<!ELEMENT DATA (#PCDATA)>
+<!ELEMENT RETS-STATUS EMPTY>
+<!ATTLIST RETS-STATUS
+	ReplyCode CDATA #IMPLIED
+	ReplyText CDATA #IMPLIED
+>
+<!-- PACKAGING ELEMENTS -->
+<!ELEMENT RETS ((METADATA-SYSTEM | METADATA-RESOURCE | METADATA-FOREIGNKEYS | METADATA-CLASS | METADATA-TABLE | METADATA-UPDATE | METADATA-OBJECT | METADATA-LOOKUP | METADATA-LOOKUP_TYPE | METADATA-SEARCH_HELP | METADATA-EDITMASK | METADATA-UPDATE_HELP | METADATA-VALIDATION_LOOKUP | METADATA-VALIDATION_LOOKUP_TYPE | METADATA-VALIDATION_EXPRESSION | METADATA-UPDATE_TYPE | METADATA-VALIDATION_EXTERNAL| METADATA-VALIDATION_EXTERNAL_TYPE)*, RETS-STATUS?)>
+<!ATTLIST RETS
+	ReplyCode CDATA #REQUIRED
+	ReplyText CDATA #REQUIRED
+>
