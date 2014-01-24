@@ -368,6 +368,7 @@ public class ReportForm extends JFrame implements Runnable {
     	sb.append("TestReports");
     	sb.append("_");
     	sb.append(formatDate());
+        sb.append(".xml");
     	String fileName=sb.toString();
     	return fileName;
     }
