@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/xmlParserAPIs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jardiff.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jnlp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/xml-apis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/xercesImpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jnlp-servlet.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
