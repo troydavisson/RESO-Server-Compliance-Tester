@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1d71287-d374-4a04-a6a2-a2296c5be676" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/DMQLTestConfigurer.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/DMQLTestConfigurer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestExecuter.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestExecuter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/DMQLConfigurator.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/DMQLConfigurator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/ReportForm.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/ReportForm.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/realtor/rets/compliance/DMQLTestConfigurer.java" afterPath="$PROJECT_DIR$/src/com/realtor/rets/compliance/DMQLTestConfigurer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/DMQLConfigurator.java" afterPath="$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/DMQLConfigurator.java" />
     </list>
     <ignored path="RESO-Server-Compliance-Tester.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,24 +67,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EvaluateLogin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/EvaluateLogin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="478" column="70" selection-start="15944" selection-end="15944" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CheckGetObjectHeaders18.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/CheckGetObjectHeaders18.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="55" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ValidateCompactSearch18.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/ValidateCompactSearch18.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -142,10 +130,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportForm.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ReportForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/ReportForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="370" column="23" selection-start="12158" selection-end="12158" vertical-scroll-proportion="1.3759398">
+            <state line="370" column="23" selection-start="12158" selection-end="12158" vertical-scroll-proportion="-20.333334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DMQLTestConfigurer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/DMQLTestConfigurer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="44" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DMQLConfigurator.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/DMQLConfigurator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="0" selection-start="1873" selection-end="1873" vertical-scroll-proportion="0.60364467">
               <folding />
             </state>
           </provider>
@@ -175,6 +181,8 @@
         <option value="$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertyManager.java" />
         <option value="$PROJECT_DIR$/src/com/realtor/rets/compliance/TestExecuter.java" />
         <option value="$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/ReportForm.java" />
+        <option value="$PROJECT_DIR$/src/com/realtor/rets/compliance/DMQLTestConfigurer.java" />
+        <option value="$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/DMQLConfigurator.java" />
       </list>
     </option>
   </component>
@@ -435,7 +443,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25238097" sideWeight="0.686606" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25238097" sideWeight="0.686606" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -515,16 +523,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_40/src.zip!/javax/swing/text/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="292" column="16" selection-start="12327" selection-end="12327" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertyManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="18" selection-start="5872" selection-end="5872" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertiesEx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="47" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0" />
@@ -610,7 +608,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/ReportForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="370" column="23" selection-start="12158" selection-end="12158" vertical-scroll-proportion="1.3759398">
+        <state line="370" column="23" selection-start="12158" selection-end="12158" vertical-scroll-proportion="-20.333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/DMQLTestConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="44" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/DMQLConfigurator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="1873" selection-end="1873" vertical-scroll-proportion="0.60364467">
           <folding />
         </state>
       </provider>

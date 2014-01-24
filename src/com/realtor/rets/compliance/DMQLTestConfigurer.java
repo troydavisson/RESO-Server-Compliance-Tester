@@ -3,16 +3,14 @@
  */
 package com.realtor.rets.compliance;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.io.File;
-
+import com.realtor.rets.compliance.metadata.MetadataFacade;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.realtor.rets.retsapi.RETSConnection;
 
-import com.realtor.rets.compliance.PropertyManager;
-import com.realtor.rets.compliance.metadata.MetadataFacade;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *  "Controller" Class for having the user run the
@@ -29,7 +27,7 @@ public class DMQLTestConfigurer {
 
     private String logDir;
     private String password;
-    private final String retsVer = "RETS/1.5";
+    private final String retsVer = "RETS/1.8";
     private String serverUrl;
     private HashMap m_testResultMap = new HashMap();
     private static final String msf_propsFileName = "C:/aopenden/development/deploy/retsCompliance/config/TestParameters.properties";

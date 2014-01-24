@@ -7,12 +7,12 @@ import com.realtor.rets.compliance.metadata.MetadataField;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.util.*;
 
 /**
@@ -37,7 +37,7 @@ public class DMQLConfigurator extends JDialog {
 	private static final String DMQL_PROPERTY_SUFFIX_FIELD = PROPERTY_KEY_TOKEN_SEPARATOR + "Field";
 	private static final String DMQL_PROPERTY_SUFFIX_VALUE = PROPERTY_KEY_TOKEN_SEPARATOR + "Value";
 
-	private static final String [] RESOURCES = {"Agent", "Property"};
+	private static final String [] RESOURCES = {"Property"};
 
 	private static final String [] TYPES = {"Standard", "System"};
 
