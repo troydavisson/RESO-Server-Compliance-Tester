@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1d71287-d374-4a04-a6a2-a2296c5be676" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertiesEx.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/PropertyManager.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/PropertyManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestExecuter$1.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestExecuter$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestExecuter$TestTransaction.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestExecuter$TestTransaction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestExecuter.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestExecuter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestReport.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestReport.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestResult.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/TestResult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$1.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$2.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$3.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$4.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$5.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$6.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$7.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$8.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$9.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/gui/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/tests/BaseEvaluator.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/tests/BaseEvaluator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/tests/NegativeBaseEvaluator.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/tests/NegativeBaseEvaluator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/tests/dmql/DMQLResults.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/tests/dmql/DMQLResults.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/tests/dmql/DMQLResultsStandard.class" afterPath="$PROJECT_DIR$/classes/com/realtor/rets/compliance/tests/dmql/DMQLResultsStandard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/TestClient.properties" afterPath="$PROJECT_DIR$/config/TestClient.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertyManager.java" afterPath="$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertyManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/realtor/rets/compliance/TestExecuter.java" afterPath="$PROJECT_DIR$/src/com/realtor/rets/compliance/TestExecuter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/realtor/rets/compliance/TestReport.java" afterPath="$PROJECT_DIR$/src/com/realtor/rets/compliance/TestReport.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/realtor/rets/compliance/TestResult.java" afterPath="$PROJECT_DIR$/src/com/realtor/rets/compliance/TestResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/Client.java" afterPath="$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/BaseEvaluator.java" afterPath="$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/BaseEvaluator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/NegativeBaseEvaluator.java" afterPath="$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/NegativeBaseEvaluator.java" />
     </list>
     <ignored path="RESO-Server-Compliance-Tester.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,68 +61,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TestResult.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/TestResult.java">
+      <file leaf-file-name="EvaluateLogin.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/EvaluateLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="36" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0">
+            <state line="478" column="70" selection-start="15944" selection-end="15944" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/Client.java">
+      <file leaf-file-name="CheckGetObjectHeaders18.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/CheckGetObjectHeaders18.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="459" column="61" selection-start="17872" selection-end="17896" vertical-scroll-proportion="0.0">
+            <state line="13" column="55" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JTextComponent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_40/src.zip!/javax/swing/text/JTextComponent.java">
+      <file leaf-file-name="ValidateCompactSearch18.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/ValidateCompactSearch18.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1720" column="23" selection-start="63129" selection-end="63135" vertical-scroll-proportion="0.0">
+            <state line="7" column="13" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Document.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_40/src.zip!/javax/swing/text/Document.java">
+      <file leaf-file-name="ValidateCompact.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/ValidateCompact.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="292" column="16" selection-start="12327" selection-end="12327" vertical-scroll-proportion="0.0">
+            <state line="28" column="13" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropertyManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertyManager.java">
+      <file leaf-file-name="DMQLSystemAndStandardNumericResultsRangeMixed.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/dmql/DMQLSystemAndStandardNumericResultsRangeMixed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="18" selection-start="5872" selection-end="5872" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="17" column="13" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropertiesEx.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertiesEx.java">
+      <file leaf-file-name="ValidateUpdateResponse18.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/ValidateUpdateResponse18.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="47" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="7" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestExecuter.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/TestExecuter.java">
+      <file leaf-file-name="ValidateUpdateResponse.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/ValidateUpdateResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="329" column="28" selection-start="10858" selection-end="10858" vertical-scroll-proportion="0.19098713">
+            <state line="28" column="13" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -168,19 +133,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NegativeBaseEvaluator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/NegativeBaseEvaluator.java">
+      <file leaf-file-name="Client.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="51" selection-start="2072" selection-end="2072" vertical-scroll-proportion="0.0">
+            <state line="178" column="16" selection-start="6358" selection-end="6359" vertical-scroll-proportion="-8.555555">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseEvaluator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/BaseEvaluator.java">
+      <file leaf-file-name="ReportForm.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/ReportForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="26" selection-start="4394" selection-end="4394" vertical-scroll-proportion="0.0">
+            <state line="370" column="23" selection-start="12158" selection-end="12158" vertical-scroll-proportion="1.3759398">
               <folding />
             </state>
           </provider>
@@ -209,6 +174,7 @@
         <option value="$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertiesEx.java" />
         <option value="$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertyManager.java" />
         <option value="$PROJECT_DIR$/src/com/realtor/rets/compliance/TestExecuter.java" />
+        <option value="$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/ReportForm.java" />
       </list>
     </option>
   </component>
@@ -245,7 +211,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -282,8 +247,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RESO-Server-Compliance-Tester" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RESO-Server-Compliance-Tester" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compliance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
       <pane id="Scope" />
     </panes>
@@ -292,13 +280,13 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="166" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="193" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="174" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="194" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1098" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1101" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1098" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="191" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="191" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -447,7 +435,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25238097" sideWeight="0.686606" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -460,10 +447,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.686606" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27738094" sideWeight="0.686606" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -493,7 +481,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added IntelliJ project files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added &quot;.xml&quot; to the end of the file" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -507,6 +495,8 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="added IntelliJ project files" />
+    <MESSAGE value="fixed errors related to retaining properties file values and slashes in log and results directory; added the retsStatus code to the test results object and the xml report" />
+    <MESSAGE value="added &quot;.xml&quot; to the end of the file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -525,97 +515,102 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/TestEvaluator.java">
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_40/src.zip!/javax/swing/text/Document.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="292" column="16" selection-start="12327" selection-end="12327" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/InvalidQuerySyntax.java">
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertyManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="61" selection-start="134" selection-end="155" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="168" column="18" selection-start="5872" selection-end="5872" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/TestReport.java">
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertiesEx.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="74" selection-start="4177" selection-end="4177" vertical-scroll-proportion="0.0">
+        <state line="19" column="47" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/TestExecuter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="329" column="28" selection-start="10858" selection-end="10858" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/NegativeBaseEvaluator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="51" selection-start="2072" selection-end="2072" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="60" column="51" selection-start="2072" selection-end="2072" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/BaseEvaluator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="26" selection-start="4394" selection-end="4394" vertical-scroll-proportion="0.0">
+        <state line="150" column="26" selection-start="4394" selection-end="4394" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/EvaluateLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="478" column="70" selection-start="15944" selection-end="15944" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/Configuration.java">
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/CheckGetObjectHeaders18.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="315" selection-end="315" vertical-scroll-proportion="-0.71868134">
+        <state line="13" column="55" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/TestResult.java">
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/ValidateCompactSearch18.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="36" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0">
+        <state line="7" column="13" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_40/src.zip!/javax/swing/text/JTextComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/ValidateCompact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1720" column="23" selection-start="63129" selection-end="63135" vertical-scroll-proportion="0.0">
+        <state line="28" column="13" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_40/src.zip!/javax/swing/text/Document.java">
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/dmql/DMQLSystemAndStandardNumericResultsRangeMixed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="292" column="16" selection-start="12327" selection-end="12327" vertical-scroll-proportion="0.0">
+        <state line="17" column="13" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/ValidateUpdateResponse18.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/tests/ValidateUpdateResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="13" selection-start="687" selection-end="687" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/TestReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="74" selection-start="4177" selection-end="4177" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="459" column="61" selection-start="17872" selection-end="17896" vertical-scroll-proportion="0.0">
+        <state line="178" column="16" selection-start="6358" selection-end="6359" vertical-scroll-proportion="-8.555555">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertiesEx.java">
+    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/gui/ReportForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="47" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/PropertyManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="18" selection-start="5872" selection-end="5872" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/realtor/rets/compliance/TestExecuter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="329" column="28" selection-start="10858" selection-end="10858" vertical-scroll-proportion="0.19098713">
+        <state line="370" column="23" selection-start="12158" selection-end="12158" vertical-scroll-proportion="1.3759398">
           <folding />
         </state>
       </provider>
