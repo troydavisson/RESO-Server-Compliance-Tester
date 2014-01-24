@@ -3,21 +3,6 @@
  */
 package com.realtor.rets.compliance;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.StringReader;
-import java.lang.reflect.Method;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.realtor.rets.retsapi.RETSConnection;
@@ -28,6 +13,15 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.io.IOException;
+import java.io.StringReader;
+import java.lang.reflect.Method;
+import java.net.URL;
+import java.util.*;
 
 /**
  * The test Executer executes RETS Compliance tests defined in XML documents
@@ -333,7 +327,7 @@ public class TestExecuter {
      * @param conn        An active connection to a RETS server (login transaction
      *                    already performed)
      * @param xmlFileName name of the xml file to load
-     * @param props       TestParametersproperties fileName to load
+     * @param propertiesFile       TestParametersproperties fileName to load
      * @return test report for the tests defined in xmlFileName
      */
     public TestReport execute(RETSConnection conn, String xmlFileName, String propertiesFile) {
@@ -526,6 +520,7 @@ public class TestExecuter {
         }
 
         if (trans.getResponseStatus() != null)
+
             if (!trans.getResponseStatus().equalsIgnoreCase("0")) {
                 TestResult testResult = new TestResult("Response Status " +
                         trans.getResponseStatus(),
@@ -534,6 +529,7 @@ public class TestExecuter {
                         trans.getResponseStatus());
                 testResult.setJavaException("");
                 testResult.setStatus("Info");
+                testResult.setRetsReplyCode(trans.getResponseStatus());
 
                 StringBuffer sb = new StringBuffer();
                 sb.append("Transaction Name : " + trans.getClass().getName());
@@ -737,7 +733,6 @@ public class TestExecuter {
      * Reports an excepption in a testResult object
      *
      * @param e       Exception to report
-     * @param message Additional message used for notes
      * @return test Result object
      */
     public static TestResult reportTransactionException(Exception e, RETSTransaction trans) {

@@ -4,11 +4,14 @@
  */
 package com.realtor.rets.compliance.tests;
 
-import com.realtor.rets.compliance.*;
-
-import java.util.*;
-
+import com.realtor.rets.compliance.TestEvaluator;
+import com.realtor.rets.compliance.TestReport;
+import com.realtor.rets.compliance.TestResult;
 import org.realtor.rets.retsapi.RETSTransaction;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Base class that can be extended -- adds methods that could be used often by
@@ -150,6 +153,10 @@ public abstract class BaseEvaluator implements TestEvaluator {
     TestResult testResult = new TestResult(name, description);
     testResult.setJavaException("");
     testResult.setStatus(status);
+      if (trans.getResponseStatus() != null) {
+
+          testResult.setRetsReplyCode(trans.getResponseStatus());
+      }
 
     StringBuffer sb = new StringBuffer();
     sb.append("Transaction Name : " + trans.getClass().getName());

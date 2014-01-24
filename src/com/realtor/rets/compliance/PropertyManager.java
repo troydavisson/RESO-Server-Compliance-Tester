@@ -1,10 +1,10 @@
 package com.realtor.rets.compliance;
 
-import java.io.*;
-import java.util.*;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import java.io.*;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -69,9 +69,9 @@ public class PropertyManager {
         PropertyManager.configDirectory = newConfigDirectory;
     }
 
-    public Properties getProperties() {
+    public PropertiesEx getProperties() {
         Object o = null;
-        Properties props = new Properties();
+        PropertiesEx props = new PropertiesEx();
         if ( map == null || map.isEmpty() ) load();
         Iterator iterator = map.keySet().iterator();
         while ( iterator.hasNext() ) {
@@ -117,9 +117,10 @@ public class PropertyManager {
 
 
     public void load() {
+        System.out.println("in property manager load");
         if (filename != null) {
             map.clear();
-            Properties properties = new Properties();
+            PropertiesEx properties = new PropertiesEx();
             try {
                 InputStream inputStream = null;
                 File file = new File(filename);
@@ -161,10 +162,11 @@ public class PropertyManager {
             key = (String) iterator.next();
             value = (String) map.get(key);
             if ( value != null ) {
-                while ( value.indexOf('\\') > -1 ) {
+               /* while ( value.indexOf('\\') > -1 ) {
                     int index = value.indexOf('\\');
                     value = value.substring(0,index) + value.substring(index+1);
                 }
+                */
             }
             map.put(key, value);
         }

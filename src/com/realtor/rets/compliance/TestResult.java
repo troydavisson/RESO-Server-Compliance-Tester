@@ -22,6 +22,16 @@ public class TestResult {
   private String status = null;
   private String responseBody = null;
 
+    public String getRetsReplyCode() {
+        return retsReplyCode;
+    }
+
+    public void setRetsReplyCode(String retsReplyCode) {
+        this.retsReplyCode = retsReplyCode;
+    }
+
+    private String retsReplyCode="0";
+
   /**
    * Creates a new TestResult object.
    */

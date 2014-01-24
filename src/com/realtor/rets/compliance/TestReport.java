@@ -4,11 +4,11 @@
  */
 package com.realtor.rets.compliance;
 
+import org.realtor.rets.retsapi.RETSConnection;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-
-import org.realtor.rets.retsapi.RETSConnection;
 
 
 /**
@@ -156,6 +156,7 @@ private String serverProfileUrl;
           test = (TestResult) iterator.next();
           stringBuffer.append("    <Test>\n");
           stringBuffer.append("      <name>" + test.getName() + "</name>\n");
+          stringBuffer.append("      <retsStatus>" + test.getRetsReplyCode() + "</retsStatus>\n");
           stringBuffer.append("      <description><![CDATA[" + test.getDescription() + "]]></description>\n");
           stringBuffer.append("      <status>" + test.getStatus()+ "</status>\n");
           stringBuffer.append("      <notes>\n");

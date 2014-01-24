@@ -5,46 +5,18 @@ package com.realtor.rets.compliance.gui;
  *
   */
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import com.realtor.rets.compliance.*;
+
+import javax.swing.*;
+import javax.swing.border.CompoundBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.util.Enumeration;
-
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.border.CompoundBorder;
-
-import com.realtor.rets.compliance.DMQLTestConfigurer;
-import com.realtor.rets.compliance.ExampleFileFilter;
-import com.realtor.rets.compliance.PropertyManager;
-import com.realtor.rets.compliance.ResourceManager;
-import com.realtor.rets.compliance.TestExecuter;
 
 /**
  *  This is a GUI client for the RETS Compliance Platform.  This class provides
@@ -487,13 +459,14 @@ public class Client extends JFrame
     {
         PropertyManager pm = PropertyManager.getClientPropertyManager();
         pm.load();
+
         textUsername.setText(pm.getProperty("username"));
         textPassword.setText(pm.getProperty("password"));
         textServerURL.setText(pm.getProperty("loginurl"));
         textUserAgent.setText(pm.getProperty("useragent"));
         textUserAgentPassword.setText(pm.getProperty("uaPassword"));
         textLogDir.setText(pm.getProperty("transactionlogdirectory"));
-        textLogDir.setText(pm.getProperty("resultsdirectory"));
+        textResultsDir.setText(pm.getProperty("resultsdirectory"));
         String versionString = pm.getProperty("retsVersion");
         if (versionString == null) {
             retsVersion.setSelectedItem(DEFAULT_RETS_VERSION);

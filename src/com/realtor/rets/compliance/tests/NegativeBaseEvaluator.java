@@ -2,13 +2,12 @@
  */
 package com.realtor.rets.compliance.tests;
 
-import java.util.Map;
-
+import com.realtor.rets.compliance.TestResult;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.realtor.rets.retsapi.RETSTransaction;
 
-import com.realtor.rets.compliance.TestResult;
+import java.util.Map;
 
 /**
  *  Base class for Negative Tests Result Evaluator classes will evaluate each of the  
@@ -23,6 +22,7 @@ public abstract class NegativeBaseEvaluator extends BaseEvaluator {
     protected String testResultStatus = null;
     protected String testResultDesc = null;       //testResult Description
     protected String testResultNotes = null;
+
     
     protected String correctResponseStatus = null;
 
@@ -58,7 +58,7 @@ public abstract class NegativeBaseEvaluator extends BaseEvaluator {
                                                         transRespStatus);    
             }
         }
-        
+        testResult.setRetsReplyCode(transRespStatus);
         return testResult;
     }
 
