@@ -30,7 +30,7 @@ public class MetadataFacade {
     
     protected Document metaDataDocument;    
 
-    private final static String msf_xPathQueryResources = "/RETS/METADATA/METADATA-SYSTEM/System/METADATA-RESOURCE/Resource";
+    private final static String msf_xPathQueryResources = "/RETS/METADATA/METADATA-SYSTEM/SYSTEM/METADATA-RESOURCE/Resource";
     
     private final static String msf_xPathQueryStandardResourceNames = msf_xPathQueryResources + "/StandardName";
     private final static String msf_xPathQueryStandardClass = msf_xPathQueryResources + "[StandardName=";
