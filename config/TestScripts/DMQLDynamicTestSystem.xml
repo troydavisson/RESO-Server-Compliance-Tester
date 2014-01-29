@@ -143,7 +143,7 @@
         </TestEvaluators>
     </SearchTransaction>
     <SearchTransaction>
-        <TransactionLabel>DMQL Mixed System and Standard - Range</TransactionLabel>
+        <TransactionLabel>DMQL Mixed Names- Range</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>		<Query>(${DMQL.System.Decimal.Minimum.Field}=${DMQL.System.Decimal.Minimum.Value}+),(${DMQL.Standard.Decimal.Minimum.Field}=${DMQL.Standard.Decimal.Minimum.Value}-)</Query>
         <QueryType>DMQL2</QueryType>
