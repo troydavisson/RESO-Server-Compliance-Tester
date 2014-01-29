@@ -2,17 +2,6 @@
  */
 package com.realtor.rets.compliance.metadata;
 
-import java.io.InputStream;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
-
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.JXPathException;
 import org.apache.commons.jxpath.xml.JDOMParser;
@@ -20,6 +9,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jdom.Document;
 import org.jdom.Element;
+
+import java.io.InputStream;
+import java.io.Serializable;
+import java.util.*;
 
 /**
  *  This class represents a "sub-intereface" to the RETS metadata that is returned
