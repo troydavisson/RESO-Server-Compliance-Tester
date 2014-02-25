@@ -245,9 +245,9 @@ public class Client extends JFrame
                 downloadScriptsActionPerformed(evt);
             }
         });
-
+        /*
         buttonPanel.add(downloadButton, gbc);
-
+        */
         buttonLogDirectory.setText("Select Log Directory");
         buttonLogDirectory.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {

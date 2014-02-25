@@ -7,12 +7,12 @@ package com.realtor.rets.compliance.gui;
 
 import com.realtor.rets.compliance.PropertyManager;
 
-import java.awt.*;
 import javax.swing.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Iterator;
+import java.awt.*;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 
 /**
@@ -40,9 +40,9 @@ public class Configuration extends JDialog
         String[] keys =
                 {
                   "ChangePassword.Username", "ChangePassword.OldPassword", "ChangePassword.NewPassword",
-                  "GetMetadata.Class", "GetMetadata.Table", "GetObject.Id", "GetObject.Resource", "GetObject.Type",
+                  "GetMetadata.Class", "GetMetadata.Table", "GetMetadata.Resource","GetObject.Id", "GetObject.Resource", "GetObject.Type",
                   "Search.Class", "Search.QueryStandard", "Search.QuerySystem", "Search.SearchType", "Search.SelectStandard", "Search.SelectSystem","Search.Payload",
-                  "Update.Delimeter", "Update.Record", "Update.Resource", "Update.ClassName", "Update.Validate", "Update.Type",
+                  "Update.Delimiter", "Update.Record", "Update.Resource", "Update.ClassName", "Update.Validate", "Update.Type",
                   "GetPayloadList.Id","PostObject.UpdateAction","PostObject.Type","PostObject.Resource","PostObject.UploadFile"
                 };
 
