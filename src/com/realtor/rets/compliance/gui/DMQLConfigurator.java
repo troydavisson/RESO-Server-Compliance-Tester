@@ -4,6 +4,8 @@ import com.realtor.rets.compliance.DMQLTestConfigurer;
 import com.realtor.rets.compliance.PropertyManager;
 import com.realtor.rets.compliance.metadata.MetadataFacade;
 import com.realtor.rets.compliance.metadata.MetadataField;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
@@ -95,6 +97,8 @@ public class DMQLConfigurator extends JDialog {
 
     // the TableModel for the dataset display table
     private DMQLTableModel dmqlTableModel;
+
+    private static Log log = LogFactory.getLog(DMQLConfigurator.class);
 
     public DMQLConfigurator(DMQLTestConfigurer configurer, JFrame parentFrame) throws Exception {
         super(parentFrame);
@@ -342,9 +346,15 @@ public class DMQLConfigurator extends JDialog {
         Add/change the currently entered data into the table.
      */
     private void selectButtonPressed() {
-        String selectedDataType = dataTypeComboBox.getSelectedItem() != null ? dataTypeComboBox.getSelectedItem().toString() : "";
-        String selectedField = fieldComboBox.getSelectedItem() != null ? fieldComboBox.getSelectedItem().toString() : "";
-        String selectedValueName = valueNameComboBox.getSelectedItem() != null ? valueNameComboBox.getSelectedItem().toString() : "";
+        String selectedDataType = dataTypeComboBox.getSelectedItem() != null
+                                        ? dataTypeComboBox.getSelectedItem().toString()
+                                        : "";
+        String selectedField = fieldComboBox.getSelectedItem() != null
+                                        ? fieldComboBox.getSelectedItem().toString()
+                                        : "";
+        String selectedValueName = valueNameComboBox.getSelectedItem() != null
+                                        ? valueNameComboBox.getSelectedItem().toString()
+                                        : "";
         String selectedValue = valueTextField.getText();
         DMQLSearchParameterSet data =
                 new DMQLSearchParameterSet(selectedDataType, selectedField, selectedValueName, selectedValue);
@@ -443,6 +453,7 @@ public class DMQLConfigurator extends JDialog {
      */
     synchronized private void comboBoxChange(int sourceIndex) {
 
+        log.debug("IN comboBoxChange("+sourceIndex+")");
     	// if we're changing the resource, class, or type, set the data for the internal
     	// PropertyManager object
         switch (sourceIndex) {
@@ -466,13 +477,19 @@ public class DMQLConfigurator extends JDialog {
             case COMBOBOX_RESOURCE_INDEX:
                 classComboBox.removeAllItems();
                 // Hard code --- HORRROR!!!!!!
-                if ( resourceComboBox.getSelectedItem() == null )
+                if ( resourceComboBox.getSelectedItem() == null ) {
                     selectedResourceName = "Property";
-                else
+                }
+                else {
                     selectedResourceName = resourceComboBox.getSelectedItem().toString();
+                }
                 collection = facade.getClassStandardNames(selectedResourceName);
                 Hashtable map = facade.getClassesNameStrdName(selectedResourceName);
-//                System.out.println("Classes-> " + collection.toString());
+
+                log.debug("Classes-> " + collection.toString());
+                log.debug("Classes map-> " + map.toString());
+
+
                 iterator = collection.iterator();
                 while (iterator.hasNext()) {
                     className = iterator.next().toString();
@@ -481,7 +498,7 @@ public class DMQLConfigurator extends JDialog {
                     classComboBox.addItem(className);
                 }
                 classComboBox.setSelectedIndex(0);
-                break;
+                // fall thru
             case COMBOBOX_CLASS_INDEX:
             case COMBOBOX_TYPE_INDEX:
             	// de-select any rows in the dmqlTable
@@ -493,34 +510,48 @@ public class DMQLConfigurator extends JDialog {
                 if ((selectedResource != null) && (selectedClass != null) && (selectedType != null)) {
                 	setTable(selectedResource, selectedClass, selectedType);
                 }
-                break;
+                // fall thru;
             case COMBOBOX_DATATYPE_INDEX:
                 selectedDataTypeName = (String) dataTypeComboBox.getSelectedItem();
                 fieldComboBox.removeAllItems();
                 // Hard code --- HORRROR!!!!!!
-                if ( resourceComboBox.getSelectedItem() == null )
+                if ( resourceComboBox.getSelectedItem() == null ){
                     selectedResourceName = "Property";
-                else
+                }
+                else{
                     selectedResourceName = resourceComboBox.getSelectedItem().toString();
-                if ( classComboBox.getSelectedItem() == null )
+                }
+                if ( classComboBox.getSelectedItem() == null ){
                     selectedClassName = "";
+                    selectedClassName2 = "";
+                }
                 else {
                     selectedClassName = (String) classNameMap.get(classComboBox.getSelectedItem().toString());
                     selectedClassName2 = classComboBox.getSelectedItem().toString();
                 }
-                if ( dataTypeComboBox.getSelectedItem() == null )
+                if ( dataTypeComboBox.getSelectedItem() == null ){
                     selectedDataTypeName = "Decimal";
-                else
+                }
+                else {
                     selectedDataTypeName = dataTypeComboBox.getSelectedItem().toString();
+                }
+
                 MetadataField field = null;
                 String type = (String) typeComboBox.getSelectedItem();
-                System.out.println("getting field collection: type:"+type+"resourceName:"+selectedResourceName+"class:"+selectedClassName+"dataType:"+selectedDataTypeName);
+
+                log.debug("getting field collection-type:"+type+
+                        " resourceName:"+selectedResourceName+
+                        " class:"+selectedClassName+
+                        " dataType:"+selectedDataTypeName+
+                        " class2:"+selectedClassName2);
+
                 Collection fieldCollection =
                         facade.getMetadataFieldsByDataType(
                                 type,
                                 selectedResourceName,
                                 selectedClassName,
                                 selectedDataTypeName);
+
                 if (fieldCollection == null || fieldCollection.size() == 0) {
                 	fieldCollection =
                         facade.getMetadataFieldsByDataType(
@@ -528,15 +559,20 @@ public class DMQLConfigurator extends JDialog {
                                 selectedResourceName,
                                 selectedClassName2,
                                 selectedDataTypeName);
+
+                    selectedClassName=selectedClassName2;
                 }
-//                List fieldList = Arrays.asList(fieldCollection.toArray());
+//                List fieldList
+// = Arrays.asList(fieldCollection.toArray());
 //                Collections.sort(fieldList);
                 if ((fieldCollection == null) || (fieldCollection.isEmpty())) {
-//                    System.out.println("       NO FIELDS (NuLL)");
+                    log.warn("       NO FIELDS (null)");
                     fieldComboBox.setEnabled(false);
                 } else {
                     fieldCollection = new TreeSet(fieldCollection);
                     fieldComboBox.setEnabled(true);
+
+                    log.debug("fieldCollection="+fieldCollection.toString());
 //                    Iterator fieldIterator = fieldList.iterator();
                     Iterator fieldIterator = fieldCollection.iterator();
                     while (fieldIterator.hasNext()) {
@@ -551,7 +587,9 @@ public class DMQLConfigurator extends JDialog {
                     fieldComboBox.setSelectedIndex(0);
                 }
 
-                String selectedDataType = dataTypeComboBox.getSelectedItem() != null ? dataTypeComboBox.getSelectedItem().toString() : "";
+                String selectedDataType = dataTypeComboBox.getSelectedItem() != null
+                                                ? dataTypeComboBox.getSelectedItem().toString()
+                                                : "";
                 String[] array = (String[]) valueTypeToDataTypeMap.get(selectedDataType);
                 if ( array != null ) {
                     valueNameComboBox.removeAllItems();
@@ -559,13 +597,13 @@ public class DMQLConfigurator extends JDialog {
                         valueNameComboBox.addItem(array[i]);
                     }
                 }
-                break;
+                // fall thru;
             case COMBOBOX_VALUENAME_INDEX:
                 // disable the valueTextField for datatype/valuetypes that don't need a value set
             	boolean isEnabled = ! NO_VALUE_LIST.contains((String) dataTypeComboBox.getSelectedItem() + PROPERTY_KEY_TOKEN_SEPARATOR + valueNameComboBox.getSelectedItem());
             	valueLabel.setEnabled(isEnabled);
                 valueTextField.setEnabled(isEnabled);
-                break;
+                // fall thru;
         }
     }
 

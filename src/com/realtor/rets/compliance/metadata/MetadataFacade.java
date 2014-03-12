@@ -27,11 +27,11 @@ public class MetadataFacade {
     
     private final static String msf_xPathQueryStandardResourceNames = msf_xPathQueryResources + "/StandardName";
     private final static String msf_xPathQueryStandardClass = msf_xPathQueryResources + "[StandardName=";
-    private final static String msf_xPathQueryStandardAllClasses = msf_xPathQueryResources + "/Resource/METADATA-CLASS/Class/StandardName";
+    private final static String msf_xPathQueryStandardAllClasses = msf_xPathQueryResources + "/METADATA-CLASS/Class/ClassName";
  
     private final static String msf_xPathQuerySystemResourceNames = msf_xPathQueryResources + "/SystemName";
-    private final static String msf_xPathQuerySystemClass = msf_xPathQueryResources + "[SystemName=";
-    private final static String msf_xPathQuerySystemAllClasses = msf_xPathQueryResources + "/Resource/METADATA-CLASS/Class/SystemName";
+    private final static String msf_xPathQuerySystemClass = msf_xPathQueryResources + "[StandardName=";
+    private final static String msf_xPathQuerySystemAllClasses = msf_xPathQueryResources + "/METADATA-CLASS/Class/ClassName";
     
     private static final int msf_BEFORE = -1;
     private static final int msf_EQUAL = 0;
@@ -145,7 +145,7 @@ public class MetadataFacade {
         Iterator resourcesIterator      = null;
         
         JXPathContext mdDocContext = JXPathContext.newContext(metaDataDocument);
-        String xPathQuery = msf_xPathQueryStandardClass + "'" + resourceName + "']/METADATA-CLASS/Class/StandardName";        
+        String xPathQuery = msf_xPathQueryStandardClass + "'" + resourceName + "']/METADATA-CLASS/Class/ClassName";
         resourcesIterator = mdDocContext.iterate(xPathQuery);
         allClassStrdNames = new ArrayList();
         
@@ -177,7 +177,7 @@ public class MetadataFacade {
         Iterator resourcesIterator      = null;
         
         JXPathContext mdDocContext = JXPathContext.newContext(metaDataDocument);
-        String xPathQuery = msf_xPathQuerySystemClass + "'" + resourceName + "']/METADATA-CLASS/Class/SystemName";        
+        String xPathQuery = msf_xPathQuerySystemClass + "'" + resourceName + "']/METADATA-CLASS/Class/ClassName";
         resourcesIterator = mdDocContext.iterate(xPathQuery);
         allClassSystemNames = new ArrayList();
         
@@ -189,21 +189,17 @@ public class MetadataFacade {
     }
    
     public Hashtable getClassesNameStrdName(String resourceName) {
-        Hashtable classNamesByStrdName  = null;
+        Hashtable classNamesByStrdName  = new Hashtable();
         Iterator classNodesIterator     = null;
         List mdClassNodes               = null;
         Element mdClassNode             = null;
         String thisClassName            = null;
         String thisStrdName             = null;
-        StringBuffer xPathQuery         = null;
-        
-        xPathQuery = new StringBuffer(msf_xPathQueryStandardClass);
-        xPathQuery.append("'" + resourceName + "']/METADATA-CLASS/Class"); 
+        String xPathQuery         = msf_xPathQueryStandardClass + "'" + resourceName + "']/METADATA-CLASS/Class";
         
         JXPathContext mdDocContext = JXPathContext.newContext(metaDataDocument);
-        mdClassNodes = mdDocContext.selectNodes(xPathQuery.toString());
-        
-        classNamesByStrdName = new Hashtable();
+        mdClassNodes = mdDocContext.selectNodes(xPathQuery);
+
         classNodesIterator = mdClassNodes.iterator();
         while(classNodesIterator.hasNext()) {
             mdClassNode = (Element)classNodesIterator.next();
@@ -219,26 +215,23 @@ public class MetadataFacade {
     }
     
     public Hashtable getClassesNameSystemName(String resourceName) {
-        Hashtable classNamesByStrdName  = null;
+        Hashtable classNamesByStrdName  = new Hashtable();
         Iterator classNodesIterator     = null;
         List mdClassNodes               = null;
         Element mdClassNode             = null;
         String thisClassName            = null;
         String thisStrdName             = null;
-        StringBuffer xPathQuery         = null;
-        
-        xPathQuery = new StringBuffer(msf_xPathQuerySystemClass);
-        xPathQuery.append("'" + resourceName + "']/METADATA-CLASS/Class"); 
+        String xPathQuery         = msf_xPathQuerySystemClass + "'" + resourceName + "']/METADATA-CLASS/Class";
         
         JXPathContext mdDocContext = JXPathContext.newContext(metaDataDocument);
-        mdClassNodes = mdDocContext.selectNodes(xPathQuery.toString());
-        
-        classNamesByStrdName = new Hashtable();
+        mdClassNodes = mdDocContext.selectNodes(xPathQuery);
+
         classNodesIterator = mdClassNodes.iterator();
         while(classNodesIterator.hasNext()) {
             mdClassNode = (Element)classNodesIterator.next();
             thisClassName = mdClassNode.getChildText(MetadataField.classNameClass);
             thisStrdName = mdClassNode.getChildText(MetadataField.standardNameClass);
+
             classNamesByStrdName.put(thisStrdName, thisClassName);            
         }
 
@@ -452,7 +445,7 @@ public class MetadataFacade {
      * @return
      */
     private StringBuffer getXPathQueryString(String resourceName, String className, String fieldNodeType, String matchValue) {
-        StringBuffer xPathQuery = new StringBuffer ("/RETS/METADATA/METADATA-SYSTEM/System/METADATA-RESOURCE/Resource[StandardName=");
+        StringBuffer xPathQuery = new StringBuffer ("/RETS/METADATA/METADATA-SYSTEM/SYSTEM/METADATA-RESOURCE/Resource[StandardName=");
         xPathQuery.append("'" + resourceName + "']/METADATA-CLASS/Class[ClassName=");
         xPathQuery.append("'" + className + "']/METADATA-TABLE/Field");
         
