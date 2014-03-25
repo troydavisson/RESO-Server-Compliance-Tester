@@ -159,6 +159,7 @@
     
 	<TestEvaluators>
         <JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.ValidateCompactSearch</JavaClassName>
         <JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders18</JavaClassName>
         <JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders18</JavaClassName>
     </TestEvaluators>
