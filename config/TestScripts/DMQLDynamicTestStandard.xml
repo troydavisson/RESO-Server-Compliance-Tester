@@ -11,7 +11,6 @@
         <Count>1</Count>
         <Format>STANDARD-XML</Format>
         <Limit>2</Limit>
-        <Offset>1</Offset>
         <StandardNames>1</StandardNames>
         <TestEvaluators>
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLStandardNumericResultsMin</JavaClassName>
@@ -26,7 +25,6 @@
         <Count>1</Count>
         <Format>STANDARD-XML</Format>
         <Limit>2</Limit>
-        <Offset>1</Offset>
         <StandardNames>1</StandardNames>
         <TestEvaluators>
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLStandardNumericResultsMax</JavaClassName>
@@ -41,7 +39,6 @@
         <Count>1</Count>
         <Format>STANDARD-XML</Format>
         <Limit>2</Limit>
-        <Offset>1</Offset>
         <StandardNames>1</StandardNames>
         <TestEvaluators>
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLStandardNumericResultsRange</JavaClassName>
@@ -56,7 +53,6 @@
         <Count>1</Count>
         <Format>STANDARD-XML</Format>
         <Limit>2</Limit>
-        <Offset>1</Offset>
         <StandardNames>1</StandardNames>
         <TestEvaluators>
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLStandardCharResultsAND</JavaClassName>
@@ -71,7 +67,6 @@
         <Count>1</Count>
         <Format>STANDARD-XML</Format>
         <Limit>2</Limit>
-        <Offset>1</Offset>
         <StandardNames>1</StandardNames>
         <TestEvaluators>
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLStandardCharResultsOR</JavaClassName>
@@ -86,7 +81,6 @@
         <Count>1</Count>
         <Format>STANDARD-XML</Format>
         <Limit>2</Limit>
-        <Offset>1</Offset>
         <StandardNames>1</StandardNames>
         <TestEvaluators>
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLStandardCharResultsStarts</JavaClassName>
@@ -101,7 +95,6 @@
         <Count>1</Count>
         <Format>STANDARD-XML</Format>
         <Limit>2</Limit>
-        <Offset>1</Offset>
         <StandardNames>1</StandardNames>
         <TestEvaluators>
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLStandardCharResultsContains</JavaClassName>
@@ -116,7 +109,6 @@
         <Count>1</Count>
         <Format>STANDARD-XML</Format>
         <Limit>2</Limit>
-        <Offset>1</Offset>
         <StandardNames>1</StandardNames>
         <TestEvaluators>
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLStandardDateResultsMin</JavaClassName>
@@ -131,7 +123,6 @@
         <Count>1</Count>
         <Format>STANDARD-XML</Format>
         <Limit>2</Limit>
-        <Offset>1</Offset>
         <StandardNames>1</StandardNames>
         <TestEvaluators>
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLStandardDateResultsMax</JavaClassName>
@@ -146,7 +137,6 @@
         <Count>1</Count>
         <Format>STANDARD-XML</Format>
         <Limit>2</Limit>
-        <Offset>1</Offset>
         <StandardNames>1</StandardNames>
         <TestEvaluators>
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLStandardDateResultsToday</JavaClassName>
