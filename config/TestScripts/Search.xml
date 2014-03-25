@@ -2,6 +2,7 @@
 <RETSComplianceTest>
   <TestName>Search</TestName>
   <TestDescription>Tests Search Transaction</TestDescription>
+ <!--
  <SearchTransaction>
     <TransactionLabel>Search</TransactionLabel>
     <SearchType>${Search.SearchType}</SearchType>
@@ -17,7 +18,23 @@
 	<JavaClassName>com.realtor.rets.compliance.tests.ValidateSearch18DTD</JavaClassName>
     </TestEvaluators>
   </SearchTransaction>
-   <SearchTransaction>
+-->  
+<SearchTransaction>
+    <TransactionLabel>Search Standard Names</TransactionLabel>
+    <SearchType>${Search.SearchType}</SearchType>
+    <SearchClass>${Search.Class}</SearchClass>
+    <Query>${Search.QueryStandard}</Query>
+    <QueryType>DMQL2</QueryType>
+    <Count>1</Count>
+    <Format>COMPACT</Format>
+    <Limit>2</Limit>
+    <RestrictedIndicator>###</RestrictedIndicator>
+    <StandardNames>1</StandardNames>
+      <TestEvaluators>
+          <JavaClassName>com.realtor.rets.compliance.tests.ValidateCompactSearch</JavaClassName>
+	</TestEvaluators>
+		  </SearchTransaction>
+  <SearchTransaction>
       <TransactionLabel>Search No Count</TransactionLabel>
       <SearchType>${Search.SearchType}</SearchType>
       <SearchClass>${Search.Class}</SearchClass>
