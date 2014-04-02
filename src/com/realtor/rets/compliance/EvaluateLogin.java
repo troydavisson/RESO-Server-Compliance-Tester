@@ -63,7 +63,7 @@ public class EvaluateLogin {
         testReport.setTestConfigFile("Login");
         testReport.addTestResult(checkCapabilityURLs(trans, requiredCapabilityURL, true));
         testReport.addTestResult(checkOptionalCapabilityURLs(trans, optionalCapabilityURL, false));
-
+        testReport.addTestResult(checkOptionalCapabilityURLsUnsupported(trans, optionalCapabilityURL, false));
         Map respMap = CollectionUtils.copyLowerCaseMap(trans.getResponseHeaderMap());
         
 
@@ -162,18 +162,66 @@ public class EvaluateLogin {
             }
         }
 
-        TestResult tr = new TestResult("EvaluateLogin", "Check optional capability URLs");
+        TestResult tr = new TestResult("EvaluateLogin", "Check for supported optional capability URLs");
         tr.setEvaluatorClass(this.getClass().getName());
 
         if (goodCnt > 0) {
                 tr.setStatus("Info");
                 tr.setNotes("Login transaction reported support for the following OPTIONAL capability URLS :"
                                 + good);
+            }
+
+
+        return tr;
+    }
+
+        /**
+     * Checks for the required capability urls.
+     *
+     * @param trans
+     *            login transaction to check
+     * @param keys
+     *            keys passed
+     * @param required
+     *            are these required capabilities? If not only set Info status
+     *            on missing URLs
+     *
+     * @return test results
+     */
+    public TestResult checkOptionalCapabilityURLsUnsupported(RETSLoginTransaction trans,
+            String[] keys, boolean required) {
+        String good = "";
+        int goodCnt = 0;
+        String bad = "";
+        int badCnt = 0;
+
+        for (int i = 0; i < keys.length; i++) {
+            String val = trans.getCapabilityUrl(keys[i]);
+
+            if (val == null) {
+                if (badCnt++ == 0) {
+                    bad = keys[i];
+                } else {
+                    bad = bad + ", " + keys[i];
+                }
             } else {
-                tr.setStatus("Info");
-                tr.setNotes("Login transaction did not support the following OPTIONAL capability URLS :"
-                                + bad);
+                if (goodCnt++ == 0) {
+                    good = keys[i];
+                } else {
+                    good = good + ", " + keys[i];
+                }
+            }
         }
+
+        TestResult tr = new TestResult("EvaluateLogin", "Check for non-supported optional capability URLs");
+        tr.setEvaluatorClass(this.getClass().getName());
+
+        if (badCnt > 0) {
+                tr.setStatus("Info");
+                tr.setNotes("Login transaction does not support the following OPTIONAL capability URLS :"
+                                + bad);
+            }
+
 
         return tr;
     }
@@ -222,8 +270,14 @@ public class EvaluateLogin {
         if (badCnt > 0) {
             if (required) {
                 tr.setStatus("Failure");
+                if (goodCnt==0){
                 tr.setNotes("Login transaction did not report support for the following REQUIRED capability URLS : "
                                 + bad);
+                } else {
+                    tr.setNotes("Login transaction did not report support for the following REQUIRED capability URLS : "
+                                                    + bad+ "but does support the following: "+good);
+
+                }
             } else {
                 tr.setStatus("Info");
                 tr.setNotes("Login transaction did not report support for the following OPTIONAL capability URLS : "
