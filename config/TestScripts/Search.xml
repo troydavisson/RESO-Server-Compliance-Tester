@@ -7,7 +7,7 @@
     <TransactionLabel>Search</TransactionLabel>
     <SearchType>${Search.SearchType}</SearchType>
     <SearchClass>${Search.Class}</SearchClass>
-    <Query>${Search.QueryStandard}</Query>
+    <Query>${Search.Standard.RequiredFields}${Search.QueryStandard}</Query>
     <QueryType>DMQL2</QueryType>
     <Count>1</Count>
     <Format>STANDARD-XML</Format>
@@ -23,7 +23,7 @@
     <TransactionLabel>Search Standard Names</TransactionLabel>
     <SearchType>${Search.SearchType}</SearchType>
     <SearchClass>${Search.Class}</SearchClass>
-    <Query>${Search.QueryStandard}</Query>
+    <Query>${Search.Standard.RequiredFields}${Search.QueryStandard}</Query>
     <QueryType>DMQL2</QueryType>
     <Count>1</Count>
     <Format>COMPACT</Format>
@@ -38,7 +38,7 @@
       <TransactionLabel>Search No Count</TransactionLabel>
       <SearchType>${Search.SearchType}</SearchType>
       <SearchClass>${Search.Class}</SearchClass>
-      <Query>${Search.QuerySystem}</Query>
+      <Query>${Search.System.RequiredFields}${Search.QuerySystem}</Query>
       <QueryType>DMQL2</QueryType>
       <Select>${Search.SelectSystem}</Select>
       <Count>0</Count>
@@ -56,7 +56,7 @@
           <TransactionLabel>Search With Count</TransactionLabel>
           <SearchType>${Search.SearchType}</SearchType>
           <SearchClass>${Search.Class}</SearchClass>
-          <Query>${Search.QuerySystem}</Query>
+          <Query>${Search.System.RequiredFields}${Search.QuerySystem}</Query>
           <QueryType>DMQL2</QueryType>
           <Select>${Search.SelectSystem}</Select>
           <Count>1</Count>
@@ -74,7 +74,7 @@
               <TransactionLabel>Search Count Only</TransactionLabel>
               <SearchType>${Search.SearchType}</SearchType>
               <SearchClass>${Search.Class}</SearchClass>
-              <Query>${Search.QuerySystem}</Query>
+              <Query>${Search.System.RequiredFields}${Search.QuerySystem}</Query>
               <QueryType>DMQL2</QueryType>
               <Select>${Search.SelectSystem}</Select>
               <Count>2</Count>
