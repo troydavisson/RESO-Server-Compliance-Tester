@@ -5,14 +5,14 @@
  */
 package com.realtor.rets.compliance;
 
-import java.util.*;
-
+import com.realtor.rets.compliance.gui.ReportForm;
+import com.realtor.rets.compliance.tests.util.CollectionUtils;
+import com.realtor.rets.compliance.tests.util.DateTimeUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.realtor.rets.retsapi.RETSLoginTransaction;
 
-import com.realtor.rets.compliance.gui.ReportForm;
-import com.realtor.rets.compliance.tests.util.*;
+import java.util.*;
 
 /**
  * Evaluates the login transaction
@@ -62,7 +62,7 @@ public class EvaluateLogin {
         testReport.setDescription("Validating the login response.");
         testReport.setTestConfigFile("Login");
         testReport.addTestResult(checkCapabilityURLs(trans, requiredCapabilityURL, true));
-        testReport.addTestResult(checkCapabilityURLs(trans, optionalCapabilityURL, false));
+        testReport.addTestResult(checkOptionalCapabilityURLs(trans, optionalCapabilityURL, false));
 
         Map respMap = CollectionUtils.copyLowerCaseMap(trans.getResponseHeaderMap());
         
@@ -137,6 +137,60 @@ public class EvaluateLogin {
      * 
      * @return test results
      */
+    public TestResult checkOptionalCapabilityURLs(RETSLoginTransaction trans,
+            String[] keys, boolean required) {
+        String good = "";
+        int goodCnt = 0;
+        String bad = "";
+        int badCnt = 0;
+
+        for (int i = 0; i < keys.length; i++) {
+            String val = trans.getCapabilityUrl(keys[i]);
+
+            if (val == null) {
+                if (badCnt++ == 0) {
+                    bad = keys[i];
+                } else {
+                    bad = bad + ", " + keys[i];
+                }
+            } else {
+                if (goodCnt++ == 0) {
+                    good = keys[i];
+                } else {
+                    good = good + ", " + keys[i];
+                }
+            }
+        }
+
+        TestResult tr = new TestResult("EvaluateLogin", "Check optional capability URLs");
+        tr.setEvaluatorClass(this.getClass().getName());
+
+        if (goodCnt > 0) {
+                tr.setStatus("Info");
+                tr.setNotes("Login transaction reported support for the following OPTIONAL capability URLS :"
+                                + good);
+            } else {
+                tr.setStatus("Info");
+                tr.setNotes("Login transaction did not support the following OPTIONAL capability URLS :"
+                                + bad);
+        }
+
+        return tr;
+    }
+
+    /**
+     * Checks for the required capability urls.
+     *
+     * @param trans
+     *            login transaction to check
+     * @param keys
+     *            keys passed
+     * @param required
+     *            are these required capabilities? If not only set Info status
+     *            on missing URLs
+     *
+     * @return test results
+     */
     public TestResult checkCapabilityURLs(RETSLoginTransaction trans,
             String[] keys, boolean required) {
         String good = "";
@@ -179,7 +233,7 @@ public class EvaluateLogin {
             tr.setStatus("Success");
 
             if (required) {
-                tr.setNotes("Login transaction reported support for the following REQUIRED capability URLS :" 
+                tr.setNotes("Login transaction reported support for the following REQUIRED capability URLS :"
                                 + good);
             } else {
                 tr.setNotes("Login transaction reported support for the following OPTIONAL capability URLS :"
@@ -191,8 +245,6 @@ public class EvaluateLogin {
 
         return tr;
     }
-
-    
     
     /**
      * Checks Login Response Arguments
@@ -602,8 +654,6 @@ public class EvaluateLogin {
     }
 
     /**
-     * @param testDescription
-     * @param testName
      * @param testNotes
      * @param testStatus
      * @return
