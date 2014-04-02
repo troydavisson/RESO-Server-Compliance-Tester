@@ -6,7 +6,7 @@
         <TransactionLabel>DMQL Numeric Search - Minimum Value</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>(${DMQL.System.Decimal.Minimum.Field}=${DMQL.System.Decimal.Minimum.Value}+)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.Decimal.Minimum.Field}=${DMQL.System.Decimal.Minimum.Value}+)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -20,7 +20,7 @@
         <TransactionLabel>DMQL Numeric Search - Maximum Value</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -34,7 +34,7 @@
         <TransactionLabel>DMQL Numeric Search - Range</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>(${DMQL.System.Decimal.RangeHigh.Field}=${DMQL.System.Decimal.RangeLow.Value}-${DMQL.System.Decimal.RangeHigh.Value})</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.Decimal.RangeHigh.Field}=${DMQL.System.Decimal.RangeLow.Value}-${DMQL.System.Decimal.RangeHigh.Value})</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -48,7 +48,7 @@
         <TransactionLabel>DMQL Character Search - AND</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>(${DMQL.System.Character.AndOr.Field}=${DMQL.System.Character.AndOr.Value}),(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.Character.AndOr.Field}=${DMQL.System.Character.AndOr.Value}),(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -62,7 +62,7 @@
         <TransactionLabel>DMQL Character Search - OR</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>(${DMQL.System.Character.AndOr.Field}=${DMQL.System.Character.AndOr.Value})|(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.Character.AndOr.Field}=${DMQL.System.Character.AndOr.Value})|(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -76,7 +76,7 @@
         <TransactionLabel>DMQL Character Search - Starts With</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>(${DMQL.System.Character.StartsWith.Field}=${DMQL.System.Character.StartsWith.Value}*)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.Character.StartsWith.Field}=${DMQL.System.Character.StartsWith.Value}*)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -90,7 +90,7 @@
         <TransactionLabel>DMQL Character Search - Contains</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>(${DMQL.System.Character.Contains.Field}=*${DMQL.System.Character.Contains.Value}*)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.Character.Contains.Field}=*${DMQL.System.Character.Contains.Value}*)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -104,7 +104,7 @@
         <TransactionLabel>DMQL Date Search - After This Date</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>(${DMQL.System.DateTime.Minimum.Field}=${DMQL.System.DateTime.Minimum.Value}+)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.DateTime.Minimum.Field}=${DMQL.System.DateTime.Minimum.Value}+)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -118,7 +118,7 @@
         <TransactionLabel>DMQL Date Search - Before This Date</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>(${DMQL.System.DateTime.Maximum.Field}=${DMQL.System.DateTime.Maximum.Value}-)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.DateTime.Maximum.Field}=${DMQL.System.DateTime.Maximum.Value}-)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -132,7 +132,7 @@
         <TransactionLabel>DMQL Date Search - Today</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>(${DMQL.System.DateTime.Today.Field}=TODAY)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.DateTime.Today.Field}=TODAY)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -145,7 +145,8 @@
     <SearchTransaction>
         <TransactionLabel>DMQL Mixed Names- Range</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
-        <SearchClass>${DMQL.SearchClass}</SearchClass>		<Query>(${DMQL.System.Decimal.Minimum.Field}=${DMQL.System.Decimal.Minimum.Value}+),(${DMQL.Standard.Decimal.Minimum.Field}=${DMQL.Standard.Decimal.Minimum.Value}-)</Query>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>		
+		<Query>${Search.System.RequiredFields}(${DMQL.System.Decimal.Minimum.Field}=${DMQL.System.Decimal.Minimum.Value}+),(${DMQL.Standard.Decimal.Minimum.Field}=${DMQL.Standard.Decimal.Minimum.Value}-)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -159,7 +160,7 @@
     
 	<TestEvaluators>
         <JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
-		<JavaClassName>com.realtor.rets.compliance.tests.ValidateCompactSearch</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.ValidateCompactSearch18</JavaClassName>
         <JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders18</JavaClassName>
         <JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders18</JavaClassName>
     </TestEvaluators>
