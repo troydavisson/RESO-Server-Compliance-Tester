@@ -2,14 +2,14 @@
  */
 package com.realtor.rets.compliance.tests.dmql;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 /**
  *   DMQL test Evaluator class - Tests DMQL query language by using
@@ -26,12 +26,13 @@ public class DMQLSystemDateResultsMin extends DMQLResultsSystem {
     private final static String SUCCESS_NOTES =
         "All requested search fields had the correct Date values in the response: \n\n";
 
-	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
 	protected void compareDMQLResults(String transName, String responseBody,
    		CompactFormatData compactFormatData) {
 
 		String decimalMinimumField = getDMQLProperty(DMQL_DATE_MINIMUM_FIELD);
+        log.debug("field is:"+DMQL_DATE_MINIMUM_FIELD);
         List decimalMinimumDataList = compactFormatData.getDataForColumnAsList(decimalMinimumField);
 
         testResultStatus = null;

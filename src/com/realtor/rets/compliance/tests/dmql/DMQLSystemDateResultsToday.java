@@ -2,15 +2,15 @@
  */
 package com.realtor.rets.compliance.tests.dmql;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 /**
  *   DMQL test Evaluator class - Tests DMQL query language by using 
@@ -31,7 +31,7 @@ public class DMQLSystemDateResultsToday extends DMQLResultsSystem {
     private final static int CAL_SECOND_VAL = 0;
     private final static int CAL_MILLISECOND_VAL = 0;
     private final static SimpleDateFormat DATE_FORMAT =
-        new SimpleDateFormat("yyyy-MM-dd");
+        new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     
     private static Calendar todayCalendar;
     
@@ -52,7 +52,7 @@ public class DMQLSystemDateResultsToday extends DMQLResultsSystem {
    		CompactFormatData compactFormatData) {
    	
    		String fieldName = getDMQLProperty(DMQL_DATE_TODAY_FIELD);
-    
+        log.debug("field is:"+DMQL_DATE_TODAY_FIELD);
    		testResultDesc = "Compare value of requested field " + fieldName +
 			" to the specified today's Date; date field Value must be THE SAME AS the value "
 			+ todayCalendar;

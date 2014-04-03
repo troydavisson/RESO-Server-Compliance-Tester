@@ -2,15 +2,15 @@
  */
 package com.realtor.rets.compliance.tests.dmql;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 /**
  *   DMQL test Evaluator class - Tests DMQL query language by using 
@@ -24,7 +24,7 @@ public class DMQLSystemDateResultsMax extends DMQLResultsSystem {
 	
     private static Log log = LogFactory.getLog(DMQLSystemDateResultsMax.class);
     
-    private final static SimpleDateFormat RETS_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd", new Locale("English"));
+    private final static SimpleDateFormat RETS_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", new Locale("English"));
     private final static String FAILURE_NOTES =
         "One or more Search field values had an incorrect numeric value in the response: ";
         
@@ -32,6 +32,7 @@ public class DMQLSystemDateResultsMax extends DMQLResultsSystem {
    		CompactFormatData compactFormatData) {
         
         String fieldName        = getDMQLProperty(DMQL_DATE_MAXIMUM_FIELD);
+        log.debug("fieldName:"+DMQL_DATE_MAXIMUM_FIELD);
         String fieldValue       = getDMQLProperty(DMQL_DATE_MAXIMUM_VALUE);
         Date thresholdDate      = null;
         String testFailResult   = null;
