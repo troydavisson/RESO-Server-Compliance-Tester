@@ -1,0 +1,32 @@
+<!-- <!DOCTYPE RETS SYSTEM "RETS-METADATA-20080829.dtd"> -->
+<!-- <!DOCTYPE RETS [ -->
+<!--   Real Estate Transaction Specification (RETS) DTD  -->
+<!--   Real Estate Transaction Markup Language (RETML)  -->
+<!--
+	submitted by:
+	Paula O'Brien
+	Ronin Technologies
+	Version 1.x  10/01/13
+	
+	
+-->
+<!-- BASIC ELEMENTS -->
+<!--DATE/TIME ELEMENTS -->
+<!--see ISO 8601 for acceptable values for Format -->
+<!ENTITY  % METADATA SYSTEM "rets-metadata-content-1_7_2.dtd">
+%METADATA;
+<!ATTLIST RETS
+	ReplyCode CDATA #REQUIRED
+	ReplyText CDATA #REQUIRED
+>
+
+<!ELEMENT RETS-STATUS EMPTY>
+
+<!ATTLIST RETS-STATUS
+	ReplyCode CDATA #IMPLIED
+	ReplyText CDATA #IMPLIED
+>
+<!-- COMPOUND ELEMENTS -->
+<!-- PACKAGING ELEMENTS -->
+<!ELEMENT RETS (METADATA?, RETS-STATUS?)>
+<!-- ]> -->
