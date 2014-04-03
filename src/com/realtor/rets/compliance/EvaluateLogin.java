@@ -23,9 +23,13 @@ public class EvaluateLogin {
     private static Log log = LogFactory.getLog(ReportForm.class);
 
     private boolean isRETS10 = false;
+    private boolean isRETS172=false;
 
-    private String[] optionalCapabilityURL = { "Action", "ChangePassword",
+    private String[] optionalCapabilityURL18 = { "Action", "ChangePassword",
             "GetObject", "LoginComplete", "Logout", "Update","PostObject","GetPayloadList" };
+
+    private String[] optionalCapabilityURL172 = { "Action", "ChangePassword",
+                "GetObject", "LoginComplete", "Logout", "Update","ServerInformation" };
 
     private String[] optResponseKeys = { "Info", "Broker", "MemberName","MetadataVersion","MetadataTimestamp","MinMetadataTimestamp",
             "User" };
@@ -35,9 +39,12 @@ public class EvaluateLogin {
 
     private String[] requiredCapabilityURL = { "Login", "Search", "GetMetadata" };
 
-    private String[] requiredResponseArgs = { "Info=BROKERCODE", "Info=BROKERBRANCH","Info=METADATAID","Info=METADATAVERSION","Info=METADATATIMESTAMP","Info=MINMETADATATIMESTAMP",
+    private String[] requiredResponseArgs18 = { "Info=BROKERCODE", "Info=BROKERBRANCH","Info=METADATAID","Info=METADATAVERSION","Info=METADATATIMESTAMP","Info=MINMETADATATIMESTAMP",
             "Info=USER","Info=MEMBERNAME","Info=USERID","Info=USERCLASS","Info=USERLEVEL" };
-	
+
+    private String[] requiredResponseArgs172 = { "BROKERCODE", "BROKERBRANCH","METADATAID","METADATAVERSION","METADATATIMESTAMP","MINMETADATATIMESTAMP",
+            "USER","MEMBERNAME","USERID","USERCLASS","USERLEVEL" };
+
     /**
      * Creates a new instance of EvaluateLogin
      */
@@ -61,13 +68,20 @@ public class EvaluateLogin {
         testReport.setName("EvaluateLogin");
         testReport.setDescription("Validating the login response.");
         testReport.setTestConfigFile("Login");
-        testReport.addTestResult(checkCapabilityURLs(trans, requiredCapabilityURL, true));
-        testReport.addTestResult(checkOptionalCapabilityURLs(trans, optionalCapabilityURL, false));
-        testReport.addTestResult(checkOptionalCapabilityURLsUnsupported(trans, optionalCapabilityURL, false));
         Map respMap = CollectionUtils.copyLowerCaseMap(trans.getResponseHeaderMap());
-        
 
         TestResult retsVersionTestResult = getVersionTestResult(respMap);
+
+        testReport.addTestResult(checkCapabilityURLs(trans, requiredCapabilityURL, true));
+        if (isRETS172){
+            testReport.addTestResult(checkOptionalCapabilityURLs(trans, optionalCapabilityURL172, false));
+            testReport.addTestResult(checkOptionalCapabilityURLsUnsupported(trans, optionalCapabilityURL172, false));
+            checkResponseArgs(trans,testReport);
+        } else {
+            testReport.addTestResult(checkOptionalCapabilityURLs(trans, optionalCapabilityURL18, false));
+            testReport.addTestResult(checkOptionalCapabilityURLsUnsupported(trans, optionalCapabilityURL18, false));
+
+        }
         testReport.addTestResult(retsVersionTestResult);
 
         if (! isRETS10) {
@@ -323,31 +337,31 @@ public class EvaluateLogin {
         int badCaseCount = 0;
         String key = null;
 
-        for (int i = 0; i < requiredResponseArgs.length; i++) {
-            if (map.get(requiredResponseArgs[i]) == null) {
-                key = checkResponseCaseless(requiredResponseArgs[i], map);
+            for (int i = 0; i < requiredResponseArgs172.length; i++) {
+                if (map.get(requiredResponseArgs172[i]) == null) {
+                    key = checkResponseCaseless(requiredResponseArgs172[i], map);
 
-                if (key == null) {
-                    if (missingCount++ == 0) {
-                        missingRequiredFields = requiredResponseArgs[i];
+                    if (key == null) {
+                        if (missingCount++ == 0) {
+                            missingRequiredFields = requiredResponseArgs172[i];
+                        } else {
+                            missingRequiredFields = missingRequiredFields + ", "
+                                    + requiredResponseArgs172[i];
+                        }
                     } else {
-                        missingRequiredFields = missingRequiredFields + ", "
-                                + requiredResponseArgs[i];
+                        badCaseCount++;
+
+                        info = info + "\t Looking for \"" + requiredResponseArgs172[i]
+                                + "\" found \"" + key + "\"\n";
                     }
                 } else {
-                    badCaseCount++;
-
-                    info = info + "\t Looking for \"" + requiredResponseArgs[i]
-                            + "\" found \"" + key + "\"\n";
-                }
-            } else {
-                if (foundCount++ > 0) {
-                    notes = notes + ", " + requiredResponseArgs[i];
-                } else {
-                    notes = notes + requiredResponseArgs[i];
+                    if (foundCount++ > 0) {
+                        notes = notes + ", " + requiredResponseArgs172[i];
+                    } else {
+                        notes = notes + requiredResponseArgs172[i];
+                    }
                 }
             }
-        }
 
         if (missingCount > 0) {
             result.setStatus("Failure");
@@ -616,6 +630,10 @@ public class EvaluateLogin {
         } else if (retsVersion.equalsIgnoreCase("RETS/1.7")) {
             isValidRETSVersion = true;
         
+        }
+        else if (retsVersion.equalsIgnoreCase("RETS/1.7.2")) {
+            isValidRETSVersion = true;
+            isRETS172=true;
         }
         else if (retsVersion.equalsIgnoreCase("RETS/1.8")) {
             isValidRETSVersion = true;
