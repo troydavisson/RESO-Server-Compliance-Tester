@@ -62,7 +62,7 @@
         <TransactionLabel>DMQL Character Search - OR</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>${Search.System.RequiredFields}(${DMQL.System.Character.AndOr.Field}=${DMQL.System.Character.AndOr.Value})|(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.Character.AndOr.Field}=${DMQL.System.Character.AndOr.Value})|${Search.System.RequiredFields}(${DMQL.System.Decimal.Maximum.Field}=${DMQL.System.Decimal.Maximum.Value}-)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
@@ -142,23 +142,7 @@
             <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemDateResultsToday</JavaClassName>
         </TestEvaluators>
     </SearchTransaction>
-    <SearchTransaction>
-        <TransactionLabel>DMQL Mixed Names- Range</TransactionLabel>
-        <SearchType>${DMQL.Search.SearchType}</SearchType>
-        <SearchClass>${DMQL.SearchClass}</SearchClass>		
-		<Query>${Search.System.RequiredFields}(${DMQL.System.Decimal.Minimum.Field}=${DMQL.System.Decimal.Minimum.Value}+),(${DMQL.Standard.Decimal.Minimum.Field}=${DMQL.Standard.Decimal.Minimum.Value}-)</Query>
-        <QueryType>DMQL2</QueryType>
-        <Count>1</Count>
-        <Format>COMPACT-DECODED</Format>
-        <Limit>2</Limit>
-        <TestEvaluators>
-            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemAndStandardNumericResultsRangeMixed</JavaClassName>
-        </TestEvaluators>
-        
-        <StandardNames>1</StandardNames>
-           </SearchTransaction>
-    
-	<TestEvaluators>
+    	<TestEvaluators>
         <JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
 		<JavaClassName>com.realtor.rets.compliance.tests.ValidateCompactSearch172</JavaClassName>
         <JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders</JavaClassName>
