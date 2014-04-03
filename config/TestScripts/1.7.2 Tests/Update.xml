@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+	<TestName>Update</TestName>
+	<TestDescription>Tests Update Transaction</TestDescription>
+	<UpdateTransaction>
+		<TransactionLabel>Update</TransactionLabel>
+		<Resource>${Update.Resource}</Resource>
+		<ClassName>${Update.ClassName}</ClassName>
+		<Validate>${Update.Validate}</Validate>
+		<Type>${Update.Type}</Type>
+		<Record>${Update.Record}</Record>
+		<TestEvaluators>
+				<JavaClassName>com.realtor.rets.compliance.tests.ValidateUpdateResponse172</JavaClassName>
+		</TestEvaluators>
+	</UpdateTransaction>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+	</TestEvaluators>
+</RETSComplianceTest>
