@@ -112,7 +112,7 @@ public abstract class DMQLResultsStandard extends DMQLResults {
     /**
      * Get the XPath query for the given standard name.
      *
-     * @param strdName The standard name of the field for which to fetch the XPath query.
+     * @param fieldStandardName The standard name of the field for which to fetch the XPath query.
      * @return The XPath query for the given standard name.
      */
     protected String getXPathQuery(String fieldStandardName) {
