@@ -2,15 +2,15 @@
  */
 package com.realtor.rets.compliance.tests.dmql;
 
-import java.util.Properties;
-
+import com.realtor.rets.compliance.PropertyManager;
+import com.realtor.rets.compliance.TestResult;
+import com.realtor.rets.compliance.tests.BaseEvaluator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.realtor.rets.retsapi.RETSSearchTransaction;
 import org.realtor.rets.retsapi.RETSTransaction;
-import com.realtor.rets.compliance.PropertyManager;
-import com.realtor.rets.compliance.TestResult;
-import com.realtor.rets.compliance.tests.BaseEvaluator;
+
+import java.util.Properties;
 
 /**
  * Base class for DMQL Result Evaluator classes will evaluate each of the
@@ -37,11 +37,11 @@ public abstract class DMQLResults extends BaseEvaluator {
     protected static final String DMQL_DECIMAL_MAXIMUM_VALUE = "Decimal.Maximum.Value";
     protected static final String DMQL_DECIMAL_MINIMUM_FIELD = "Decimal.Minimum.Field";
     protected static final String DMQL_DECIMAL_MINIMUM_VALUE = "Decimal.Minimum.Value";
-    protected static final String DMQL_DATE_MAXIMUM_FIELD = "Date.Maximum.Field";
-    protected static final String DMQL_DATE_MAXIMUM_VALUE = "Date.Maximum.Value";
-    protected static final String DMQL_DATE_MINIMUM_FIELD = "Date.Minimum.Field";
-    protected static final String DMQL_DATE_MINIMUM_VALUE = "Date.Minimum.Value";
-    protected static final String DMQL_DATE_TODAY_FIELD = "Date.Today.Field";
+    protected static final String DMQL_DATE_MAXIMUM_FIELD = "DateTime.Maximum.Field";
+    protected static final String DMQL_DATE_MAXIMUM_VALUE = "DateTime.Maximum.Value";
+    protected static final String DMQL_DATE_MINIMUM_FIELD = "DateTime.Minimum.Field";
+    protected static final String DMQL_DATE_MINIMUM_VALUE = "DateTime.Minimum.Value";
+    protected static final String DMQL_DATE_TODAY_FIELD = "DateTime.Today.Field";
     
     private static Properties testParams = null;
     
