@@ -41,14 +41,12 @@ public class Client extends JFrame
     private JTextField textUserAgentPassword;
     private JTextField textUsername;
     private JComboBox retsVersion;
-    private static final String [] RETS_VERSIONS = {"1.8"};
+    private static final String [] RETS_VERSIONS = {"1.8","1.7.2"};
     //private static final String [] RETS_VERSIONS = {"1.0", "1.5", "1.7","1.8"};
     private static final String DEFAULT_RETS_VERSION = "1.8";
 
     /** Creates new form com.realtor.rets.compliance.gui.Client */
     public Client() {
-//        URL aURL = this.getClass().getClassLoader().getResource("welcomebannerfinal.gif");
-//        SplashScreen sc = new SplashScreen(aURL.getFile(),this,500);
         initComponents();
         loadProperties();
         try {
