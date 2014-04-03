@@ -26,7 +26,7 @@ public class DMQLStandardCompactDateResultsMin extends DMQLResultsSystem {
     private final static String SUCCESS_NOTES =
         "All requested search fields had the correct Date values in the response: \n\n";
 
-	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
 	protected void compareDMQLResults(String transName, String responseBody,
    		CompactFormatData compactFormatData) {
