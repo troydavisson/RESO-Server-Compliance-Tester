@@ -34,7 +34,7 @@ public class DMQLStandardDateResultsToday extends DMQLResultsStandard {
     private final static String msf_SUCCESS_NOTES =
             "All requested search fields had the correct Date values in the response: \n\n";
     private final static SimpleDateFormat msf_dqmlDateFormat =
-            new SimpleDateFormat("yyyy-MM-dd");
+            new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
     private final static int msf_CAL_HOUR_VAL = 0;
     private final static int msf_CAL_MINUTE_VAL = 0;
@@ -65,6 +65,7 @@ public class DMQLStandardDateResultsToday extends DMQLResultsStandard {
                                             Document queryResponseDoc) {
 
         String fieldStrdName = getDMQLProperty(DMQL_DATE_TODAY_FIELD);
+        log.debug("field is:"+DMQL_DATE_TODAY_FIELD);
         String xPathQuery = getXPathQuery(fieldStrdName);
 
         TestResult DMQLTestResult = null;

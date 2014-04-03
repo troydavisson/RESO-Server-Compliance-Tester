@@ -2,18 +2,17 @@
  */
 package com.realtor.rets.compliance.tests.dmql;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-
+import com.realtor.rets.compliance.TestResult;
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.JXPathException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jdom.Document;
 
-import com.realtor.rets.compliance.TestResult;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Iterator;
 
 /**
  * DMQL test Evaluator class - Tests DMQL query language by using
@@ -32,12 +31,13 @@ public class DMQLStandardDateResultsMax extends DMQLResultsStandard {
     private final static String SUCCESS_NOTES =
             "All requested search fields had the correct Date values in the response: \n\n";
 
-    private final static SimpleDateFormat RETS_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+    private final static SimpleDateFormat RETS_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
     protected TestResult compareDMQLResults(String transName, String responseBody,
                                             Document queryResponseDoc) {
 
         String fieldStrdName = getDMQLProperty(DMQL_DATE_MAXIMUM_FIELD);
+        log.debug("field is:"+DMQL_DATE_MAXIMUM_FIELD);
         String xPathQuery = getXPathQuery(fieldStrdName);
 
         TestResult dmqlTestResult   = null;

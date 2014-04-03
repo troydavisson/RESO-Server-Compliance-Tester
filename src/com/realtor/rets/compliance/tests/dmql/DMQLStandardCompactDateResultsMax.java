@@ -31,8 +31,8 @@ public class DMQLStandardCompactDateResultsMax extends DMQLResultsSystem {
     protected void compareDMQLResults(String transName, String responseBody, 
    		CompactFormatData compactFormatData) {
         
-        String fieldName        = getDMQLProperty("DMQL.Standard",DMQL_DATE_MAXIMUM_FIELD);
-        String fieldValue       = getDMQLProperty("DMQL.Standard",DMQL_DATE_MAXIMUM_VALUE);
+        String fieldName        = getDMQLProperty("DMQL.Standard.",DMQL_DATE_MAXIMUM_FIELD);
+        String fieldValue       = getDMQLProperty("DMQL.Standard.",DMQL_DATE_MAXIMUM_VALUE);
         Date thresholdDate      = null;
         String testFailResult   = null;
         

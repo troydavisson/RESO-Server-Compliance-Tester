@@ -32,8 +32,8 @@ public class DMQLStandardCompactNumericResultsMax extends DMQLResultsSystem {
             //System.err.println(responseBody);
         }
         
-        String fieldName        = getDMQLProperty("DMQL.Standard",DMQL_DECIMAL_MAXIMUM_FIELD);
-        String fieldValue       = getDMQLProperty("DMQL.Standard",DMQL_DECIMAL_MAXIMUM_VALUE);
+        String fieldName        = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_MAXIMUM_FIELD);
+        String fieldValue       = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_MAXIMUM_VALUE);
         long threshold          = Long.MIN_VALUE;
         String testFailResult   = null;
         

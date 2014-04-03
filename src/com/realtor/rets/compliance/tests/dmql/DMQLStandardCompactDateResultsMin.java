@@ -31,7 +31,7 @@ public class DMQLStandardCompactDateResultsMin extends DMQLResultsSystem {
 	protected void compareDMQLResults(String transName, String responseBody,
    		CompactFormatData compactFormatData) {
 
-		String decimalMinimumField = getDMQLProperty("DMQL.Standard",DMQL_DATE_MINIMUM_FIELD);
+		String decimalMinimumField = getDMQLProperty("DMQL.Standard.",DMQL_DATE_MINIMUM_FIELD);
         List decimalMinimumDataList = compactFormatData.getDataForColumnAsList(decimalMinimumField);
 
         testResultStatus = null;

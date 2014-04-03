@@ -28,8 +28,8 @@ public class DMQLStandardCompactNumericResultsMin extends DMQLResultsSystem {
             log.debug("* In DMQLStandardCompactNumericResultsMin evaluator class");
         }
         
-        String fieldName        = getDMQLProperty("DMQL.Standard",DMQL_DECIMAL_MINIMUM_FIELD);
-        String fieldValue       = getDMQLProperty("DMQL.Standard",DMQL_DECIMAL_MINIMUM_VALUE);
+        String fieldName        = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_MINIMUM_FIELD);
+        String fieldValue       = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_MINIMUM_VALUE);
         long threshold          = Long.MIN_VALUE;
         String testFailResult   = null;
     	

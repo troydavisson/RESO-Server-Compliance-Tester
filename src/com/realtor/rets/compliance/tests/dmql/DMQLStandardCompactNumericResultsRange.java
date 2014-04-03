@@ -29,9 +29,9 @@ public class DMQLStandardCompactNumericResultsRange extends DMQLResultsSystem {
             log.debug("* In DMQLStandardCompactNumericResultsRange evaluator class");
         }
 
-        String fieldName        = getDMQLProperty("DMQL.Standard",DMQL_DECIMAL_RANGELOW_FIELD);
-        String fieldValueLow    = getDMQLProperty("DMQL.Standard",DMQL_DECIMAL_RANGELOW_VALUE);
-        String fieldValueHigh   = getDMQLProperty("DMQL.Standard",DMQL_DECIMAL_RANGEHIGH_VALUE);
+        String fieldName        = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_RANGELOW_FIELD);
+        String fieldValueLow    = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_RANGELOW_VALUE);
+        String fieldValueHigh   = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_RANGEHIGH_VALUE);
         long lowThreshold       = Long.MIN_VALUE;
         long highThreshold      = Long.MIN_VALUE;
         String testFailResult   = null;

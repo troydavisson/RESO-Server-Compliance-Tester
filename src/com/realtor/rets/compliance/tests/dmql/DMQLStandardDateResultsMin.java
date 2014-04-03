@@ -33,7 +33,7 @@ public class DMQLStandardDateResultsMin extends DMQLResultsStandard {
     private final static String msf_SUCCESS_NOTES =
             "All requested search fields had the correct Date values in the response: \n\n";
 
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
     /**
      *
@@ -47,6 +47,7 @@ public class DMQLStandardDateResultsMin extends DMQLResultsStandard {
                                             Document queryResponseDoc) {
 
         String fieldStrdName = getDMQLProperty(DMQL_DATE_MINIMUM_FIELD);
+        log.debug("field is:"+DMQL_DATE_MINIMUM_FIELD);
         String xPathQuery = getXPathQuery(fieldStrdName);
 
         TestResult DMQLTestResult = null;

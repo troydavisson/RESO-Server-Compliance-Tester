@@ -27,10 +27,12 @@ public class DMQLStandardCompactCharResultsOR extends DMQLResultsSystem {
     protected void compareDMQLResults(String transName, String responseBody,
    		CompactFormatData compactFormatData) {
 
-        String andOrField = getDMQLProperty("DMQL.Standard",DMQL_CHARACTER_ANDOR_FIELD);
-        String andOrValue = getDMQLProperty("DMQL.Standard",DMQL_CHARACTER_ANDOR_VALUE);
-        String decimalMaximumField = getDMQLProperty("DMQL.Standard",DMQL_DECIMAL_MAXIMUM_FIELD);
-        String decimalMaximumValue = getDMQLProperty("DMQL.Standard",DMQL_DECIMAL_MAXIMUM_VALUE);
+        String andOrField = getDMQLProperty("DMQL.Standard.",DMQL_CHARACTER_ANDOR_FIELD);
+                log.debug("andOrField"+andOrField);
+
+        String andOrValue = getDMQLProperty("DMQL.Standard.",DMQL_CHARACTER_ANDOR_VALUE);
+        String decimalMaximumField = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_MAXIMUM_FIELD);
+        String decimalMaximumValue = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_MAXIMUM_VALUE);
 
         testResultDesc =
             "Compare value of requested field " + andOrField +

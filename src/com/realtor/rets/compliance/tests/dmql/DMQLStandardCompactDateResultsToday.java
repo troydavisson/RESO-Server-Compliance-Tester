@@ -31,7 +31,7 @@ public class DMQLStandardCompactDateResultsToday extends DMQLResultsSystem {
     private final static int CAL_SECOND_VAL = 0;
     private final static int CAL_MILLISECOND_VAL = 0;
     private final static SimpleDateFormat DATE_FORMAT =
-        new SimpleDateFormat("yyyy-MM-dd");
+        new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     
     private static Calendar todayCalendar;
     

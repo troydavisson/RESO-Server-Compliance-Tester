@@ -28,6 +28,7 @@ public class DMQLStandardCompactCharResultsAND extends DMQLResultsSystem {
    		CompactFormatData compactFormatData) {
 
         String andOrField = getDMQLProperty("DMQL.Standard.",DMQL_CHARACTER_ANDOR_FIELD);
+        log.debug("andOrField"+andOrField);
         String andOrValue = getDMQLProperty("DMQL.Standard.",DMQL_CHARACTER_ANDOR_VALUE);
         String decimalMaximumField = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_MAXIMUM_FIELD);
         String decimalMaximumValue = getDMQLProperty("DMQL.Standard.",DMQL_DECIMAL_MAXIMUM_VALUE);

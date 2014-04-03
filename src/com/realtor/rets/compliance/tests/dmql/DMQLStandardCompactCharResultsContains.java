@@ -28,8 +28,8 @@ public class DMQLStandardCompactCharResultsContains extends DMQLResultsSystem {
    		CompactFormatData compactFormatData) {
 
         //String fieldName = getDMQLProperty(DMQL_CHARACTER_CONTAINS_FIELD).toLowerCase();
-        String fieldName = getDMQLProperty("DMQL.Standard",DMQL_CHARACTER_CONTAINS_FIELD);
-        String containsCharacters = getDMQLProperty("DMQL.Standard",DMQL_CHARACTER_CONTAINS_VALUE);
+        String fieldName = getDMQLProperty("DMQL.Standard.",DMQL_CHARACTER_CONTAINS_FIELD);
+        String containsCharacters = getDMQLProperty("DMQL.Standard.",DMQL_CHARACTER_CONTAINS_VALUE);
 
         testResultDesc =
             "Compare value of requested field " + fieldName +

@@ -24,8 +24,8 @@ public class DMQLStandardCompactCharResultsStarts extends DMQLResultsSystem {
     protected void compareDMQLResults(String transName, String responseBody, 
    		CompactFormatData compactFormatData) {
     	
-        String fieldName = getDMQLProperty("DMQL.Standard",DMQL_CHARACTER_STARTSWITH_FIELD);
-        String fieldValue = getDMQLProperty("DMQL.Standard",DMQL_CHARACTER_STARTSWITH_VALUE);
+        String fieldName = getDMQLProperty("DMQL.Standard.",DMQL_CHARACTER_STARTSWITH_FIELD);
+        String fieldValue = getDMQLProperty("DMQL.Standard.",DMQL_CHARACTER_STARTSWITH_VALUE);
         
         testResultDesc =
             "Compare value of requested field " + fieldName +
