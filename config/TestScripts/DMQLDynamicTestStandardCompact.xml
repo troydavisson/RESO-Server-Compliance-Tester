@@ -62,7 +62,7 @@
         <TransactionLabel>DMQL Character Search - OR</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>${Search.Standard.RequiredFields}(${DMQL.Standard.Character.AndOr.Field}=${DMQL.Standard.Character.AndOr.Value})|(${DMQL.Standard.Decimal.Maximum.Field}=${DMQL.Standard.Decimal.Maximum.Value}-)</Query>
+        <Query>${Search.Standard.RequiredFields}(${DMQL.Standard.Character.AndOr.Field}=${DMQL.Standard.Character.AndOr.Value})|${Search.System.RequiredFields}(${DMQL.Standard.Decimal.Maximum.Field}=${DMQL.Standard.Decimal.Maximum.Value}-)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
