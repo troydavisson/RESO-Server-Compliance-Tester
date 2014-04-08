@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RETSComplianceTest>
-	<TestName>PostObject</TestName>
-	<TestDescription>Tests Negative PostObject Transaction</TestDescription>
+	<TestName>Negative Testing PostObject</TestName>
+	<TestDescription>Negative Testing PostObject Transaction</TestDescription>
 	<PostObjectTransaction>
 		<TransactionLabel>Invalid Resource PostObject</TransactionLabel>
 		<UpdateAction>${PostObject.UpdateAction}</UpdateAction>
