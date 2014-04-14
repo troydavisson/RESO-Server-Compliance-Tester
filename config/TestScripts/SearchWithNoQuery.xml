@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RETSComplianceTest>
-  <TestName>Search</TestName>
-  <TestDescription>Tests Search Transaction</TestDescription>
+  <TestName>SearchWithNoQuery</TestName>
+  <TestDescription>Tests Search Transaction With Support for No Query</TestDescription>
  <SearchTransaction>
     <TransactionLabel>Search With No Query XML</TransactionLabel>
     <SearchType>${Search.SearchType}</SearchType>

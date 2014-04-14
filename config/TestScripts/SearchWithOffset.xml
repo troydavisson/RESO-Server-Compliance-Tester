@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RETSComplianceTest>
-  <TestName>Search</TestName>
-  <TestDescription>Tests Search Transaction</TestDescription>
+  <TestName>SearchWithOffset</TestName>
+  <TestDescription>Tests Search Transaction With Support for Offset</TestDescription>
  <!--
  <SearchTransaction>
     <TransactionLabel>Search</TransactionLabel>

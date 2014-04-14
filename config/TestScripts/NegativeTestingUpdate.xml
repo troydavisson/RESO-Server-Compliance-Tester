@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RETSComplianceTest>
-	<TestName>Negative Testing Update</TestName>
+	<TestName>NegativeTestingUpdate</TestName>
 	<TestDescription>Negative Testing Update Transaction</TestDescription>
 	<UpdateTransaction>
 		<TransactionLabel>Update</TransactionLabel>

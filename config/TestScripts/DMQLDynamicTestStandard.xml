@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RETSComplianceTest>
-    <TestName>DMQL Dynamic Tests</TestName>
+    <TestName>DMQLDynamicTestsStandard</TestName>
     <TestDescription>Test DMQL query language by using user's selections in TestParameters</TestDescription>
     <SearchTransaction>
         <TransactionLabel>DMQL Numeric Search - Minimum Value</TransactionLabel>

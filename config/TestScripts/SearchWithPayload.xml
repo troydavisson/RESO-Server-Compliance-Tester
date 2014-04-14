@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RETSComplianceTest>
-  <TestName>Search With Payload</TestName>
+  <TestName>SearchWithPayload</TestName>
   <TestDescription>Tests Search Transaction With a Payload Argument</TestDescription>
  <SearchTransaction>
     <TransactionLabel>Search With Payload</TransactionLabel>
