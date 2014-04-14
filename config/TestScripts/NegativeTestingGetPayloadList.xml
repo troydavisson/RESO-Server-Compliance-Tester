@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RETSComplianceTest>
-	<TestName>GetPayloadList</TestName>
+	<TestName>NegativeTestingGetPayloadList</TestName>
 	<TestDescription>Tests GetPayloadList Transaction</TestDescription>
 	<GetPayloadListTransaction>
 		<TransactionLabel>GetPayloadList</TransactionLabel>
