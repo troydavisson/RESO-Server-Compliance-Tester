@@ -27,7 +27,7 @@ public class DMQLTestConfigurer {
 
     private String logDir;
     private String password;
-    private final String retsVer = "RETS/1.8";
+    private String retsVer = "RETS/1.8";
     private String serverUrl;
     private HashMap m_testResultMap = new HashMap();
     private static final String msf_propsFileName = "C:/aopenden/development/deploy/retsCompliance/config/TestParameters.properties";
@@ -36,7 +36,7 @@ public class DMQLTestConfigurer {
     private String username;
 
     public DMQLTestConfigurer(String username, String password, String url,
-                    String logDir, String userAgent, String uaPassword) {
+                    String logDir, String userAgent, String uaPassword,String versionString) {
         super();
         this.username = username;
         this.password = password;
@@ -44,6 +44,7 @@ public class DMQLTestConfigurer {
         this.serverUrl = url;
         this.userAgent = userAgent;
         this.uaPassword = uaPassword;
+        this.retsVer=versionString;
     }
 
     public MetadataFacade setupDMQLTests() throws Exception {
