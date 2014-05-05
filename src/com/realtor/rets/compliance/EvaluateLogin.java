@@ -76,7 +76,7 @@ public class EvaluateLogin {
         if (isRETS172){
             testReport.addTestResult(checkOptionalCapabilityURLs(trans, optionalCapabilityURL172, false));
             testReport.addTestResult(checkOptionalCapabilityURLsUnsupported(trans, optionalCapabilityURL172, false));
-            checkResponseArgs(trans,testReport);
+            
         } else {
             testReport.addTestResult(checkOptionalCapabilityURLs(trans, optionalCapabilityURL18, false));
             testReport.addTestResult(checkOptionalCapabilityURLsUnsupported(trans, optionalCapabilityURL18, false));
