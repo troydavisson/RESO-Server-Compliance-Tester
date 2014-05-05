@@ -41,6 +41,7 @@ public class Client extends JFrame
     private JTextField textUserAgentPassword;
     private JTextField textUsername;
     private JComboBox retsVersion;
+    private String versionString;
     private static final String [] RETS_VERSIONS = {"1.8","1.7.2"};
     //private static final String [] RETS_VERSIONS = {"1.0", "1.5", "1.7","1.8"};
     private static final String DEFAULT_RETS_VERSION = "1.8";
@@ -350,7 +351,8 @@ public class Client extends JFrame
                                             textServerURL.getText(),
                                             textLogDir.getText(),
                                             textUserAgent.getText(),
-                                            textUserAgentPassword.getText());
+                                            textUserAgentPassword.getText(),
+                                            versionString);
             DMQLConfigurator dialog = new DMQLConfigurator(dmqlTestConfigurer, this);
             dialog.show();
         }
@@ -465,7 +467,7 @@ public class Client extends JFrame
         textUserAgentPassword.setText(pm.getProperty("uaPassword"));
         textLogDir.setText(pm.getProperty("transactionlogdirectory"));
         textResultsDir.setText(pm.getProperty("resultsdirectory"));
-        String versionString = pm.getProperty("retsVersion");
+        this.versionString = pm.getProperty("retsVersion");
         if (versionString == null) {
             retsVersion.setSelectedItem(DEFAULT_RETS_VERSION);
         }
