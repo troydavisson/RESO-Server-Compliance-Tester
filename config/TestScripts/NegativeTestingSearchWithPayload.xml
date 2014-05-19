@@ -59,7 +59,51 @@
 	    <JavaClassName>com.realtor.rets.compliance.tests.RequestedDTDUnavailable</JavaClassName>
 	</TestEvaluators>
       </SearchTransaction>
-  <TestEvaluators>
+  <SearchTransaction>
+	<TransactionLabel>Invalid Payload</TransactionLabel>
+	<SearchType>${Search.SearchType}</SearchType>
+	<SearchClass>${Search.Class}</SearchClass>
+	<Query>${Search.QueryStandard}</Query>
+	<QueryType>DMQL2</QueryType>
+	<Count>1</Count>
+	<Payload>INVALIDPAYLOAD</Payload>
+	<Limit>1</Limit>
+	<StandardNames>1</StandardNames>
+	<TestEvaluators>
+	    <JavaClassName>com.realtor.rets.compliance.tests.RequestedPayloadUnavailable</JavaClassName>
+	</TestEvaluators>
+      </SearchTransaction>
+ <SearchTransaction>
+	<TransactionLabel>Payload and Format Invalid Combination</TransactionLabel>
+	<SearchType>${Search.SearchType}</SearchType>
+	<SearchClass>${Search.Class}</SearchClass>
+	<Query>${Search.QueryStandard}</Query>
+	<QueryType>DMQL2</QueryType>
+	<Count>1</Count>
+	<Format>COMPACT</Format>
+	<Payload>${Search.Payload}</Payload>
+	<Limit>1</Limit>
+	<StandardNames>1</StandardNames>
+	<TestEvaluators>
+	    <JavaClassName>com.realtor.rets.compliance.tests.PayloadAndFormat</JavaClassName>
+	</TestEvaluators>
+      </SearchTransaction> 
+<SearchTransaction>
+	<TransactionLabel>Payload and Select Invalid Combination</TransactionLabel>
+	<SearchType>${Search.SearchType}</SearchType>
+	<SearchClass>${Search.Class}</SearchClass>
+	<Query>${Search.QueryStandard}</Query>
+	<QueryType>DMQL2</QueryType>
+	<Count>1</Count>
+	<Select>${Search.SelectStandard}</Select>
+	<Payload>${Search.Payload}</Payload>
+	<Limit>1</Limit>
+	<StandardNames>1</StandardNames>
+	<TestEvaluators>
+	    <JavaClassName>com.realtor.rets.compliance.tests.PayloadAndSelect</JavaClassName>
+	</TestEvaluators>
+      </SearchTransaction> 
+ <TestEvaluators>
     <JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
     <JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders18</JavaClassName>
     <JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders18</JavaClassName>
