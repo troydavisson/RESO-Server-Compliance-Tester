@@ -243,7 +243,7 @@ public class DMQLConfigurator extends JDialog {
         constraints.gridy = 3;
         dataTypeFieldPanel.add(valueTextField, constraints);
 
-        JButton selectButton = new JButton("Select");
+        JButton selectButton = new JButton("Set");
         constraints.gridx = 2;
         constraints.gridy = 3;
         constraints.anchor = GridBagConstraints.EAST;
