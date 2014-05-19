@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+  <TestName>SearchWithPayload</TestName>
+  <TestDescription>Tests Search Transaction With a Payload Argument</TestDescription>
+ <SearchTransaction>
+    <TransactionLabel>Search With Payload</TransactionLabel>
+    <SearchType>${Search.SearchType}</SearchType>
+    <SearchClass>${Search.Class}</SearchClass>
+    <Query>${Search.QueryStandard}</Query>
+    <QueryType>DMQL2</QueryType>
+    <Count>1</Count>
+    <Payload>${Search.Payload}</Payload>
+    <Limit>2</Limit>
+    <RestrictedIndicator>###</RestrictedIndicator>
+    <StandardNames>1</StandardNames>
+     </SearchTransaction>
+  <TestEvaluators>
+    <JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+    <JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders18</JavaClassName>
+    <JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders18</JavaClassName>
+  </TestEvaluators>
+</RETSComplianceTest>

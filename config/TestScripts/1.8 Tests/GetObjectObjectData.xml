@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+	<TestName>GetObjectObjectData</TestName>
+	<TestDescription>Tests GetObject Transaction With ObjectData Support</TestDescription>
+	<GetObjectTransaction>
+		<TransactionLabel>GetObject</TransactionLabel>
+		<Resource>${GetObject.Resource}</Resource>
+		<Type>${GetObject.Type}</Type>
+		<ID>${GetObject.Id}:0</ID>
+		<ObjectData>*</ObjectData>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectHeaders18</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectOjectDataResponseHeaders18</JavaClassName>
+	</TestEvaluators>
+	</GetObjectTransaction>
+	<GetObjectTransaction>
+		<TransactionLabel>GetObject</TransactionLabel>
+		<Resource>${GetObject.Resource}</Resource>-+
+		<Type>${GetObject.Type}</Type>
+		<ID>${GetObject.Id}:*</ID>
+		<Location>1</Location>
+		<ObjectData>*</ObjectData>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.CheckMultipartResponse18</JavaClassName>
+			<JavaClassName>com.realtor.rets.compliance.tests.CheckMultipartResponseObjectData18</JavaClassName>
+		</TestEvaluators>
+	</GetObjectTransaction>
+	</RETSComplianceTest>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RETSComplianceTest>
+	<TestName>NegativeTestingUpdate</TestName>
+	<TestDescription>Negative Testing Update Transaction</TestDescription>
+	<UpdateTransaction>
+		<TransactionLabel>Update</TransactionLabel>
+		<Resource>InvalidResource</Resource>
+		<ClassName>${Update.ClassName}</ClassName>
+		<Validate>${Update.Validate}</Validate>
+		<Action>${Update.Type}</Action>
+		<Record>${Update.Record}</Record>
+		<TestEvaluators>
+			<JavaClassName>com.realtor.rets.compliance.tests.UpdateInvalidParameter</JavaClassName>
+		</TestEvaluators>
+	</UpdateTransaction>
+	<UpdateTransaction>
+			<TransactionLabel>Update</TransactionLabel>
+			<Resource>${Update.Resource}</Resource>
+			<ClassName>${Update.ClassName}</ClassName>
+			<Validate>${Update.Validate}</Validate>
+			<Action>${Update.Type}</Action>
+			<Record>BadFieldName=Invalid</Record>
+			<TestEvaluators>
+				<JavaClassName>com.realtor.rets.compliance.tests.UpdateInvalidParameter</JavaClassName>
+			</TestEvaluators>
+	</UpdateTransaction>
+	<TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckResponseHeaders18</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders18</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
+	</TestEvaluators>
+</RETSComplianceTest>
