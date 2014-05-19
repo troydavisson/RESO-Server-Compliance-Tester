@@ -4,20 +4,18 @@
  */
 package com.realtor.rets.compliance.tests;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.util.Map;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
+import com.realtor.rets.compliance.PropertyManager;
+import com.realtor.rets.compliance.TestResult;
+import com.realtor.rets.compliance.tests.util.CollectionUtils;
 import org.realtor.rets.retsapi.RETSTransaction;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
-import com.realtor.rets.compliance.PropertyManager;
-import com.realtor.rets.compliance.TestResult;
-import com.realtor.rets.compliance.tests.util.CollectionUtils;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.util.Map;
 
 
 /**
@@ -72,7 +70,7 @@ public class CheckWellFormed extends BaseEvaluator {
         String notes = "Transaction " + cName
                        + " does not include a Content-Type of 'text/xml'";
         return reportResult("CheckWellFormed",
-                                              "Checks to see if the the body of a transaction is well formed",
+                                              "Checks to see if the body of a transaction is well formed",
                                               "Info", notes);
       }
 
