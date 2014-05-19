@@ -171,7 +171,7 @@ private String errorList="";
 
 
     return reportResult("ValidateCompact:  "+transactionName,
-                        "Checks to see if the the transaction is valid RETS compact format",
+                        "Checks to see if the transaction is in valid RETS compact format",
                         status, notes,jException,"n/a");
   }
 
