@@ -92,8 +92,8 @@ public class TestExecuter {
             username = clientProps.getProperty("username");
             password = clientProps.getProperty("password");
             loginurl = clientProps.getProperty("loginurl");
-            useragent = clientProps.getProperty("uaPassword");
-            uaPassword = clientProps.getProperty("useragent");
+            useragent = clientProps.getProperty("useragent");
+            uaPassword = clientProps.getProperty("uaPassword");
             logDir = clientProps.getProperty("transactionlogdirectory");
             retsVer = clientProps.getProperty("retsVersion");
         } catch (Exception e) {
