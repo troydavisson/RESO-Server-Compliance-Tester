@@ -4,21 +4,14 @@
  */
 package com.realtor.rets.compliance.tests;
 
-import java.util.Map;
-
-import java.io.*;
-import javax.mail.internet.MimeBodyPart;
-import java.util.Collection;
-import java.util.List;
-import java.util.Iterator;
-import java.util.Enumeration;
-
-import org.realtor.rets.retsapi.RETSTransaction;
-import org.realtor.rets.retsapi.RETSGetObjectTransaction;
-
-
 import com.realtor.rets.compliance.TestResult;
 import com.realtor.rets.compliance.tests.util.CollectionUtils;
+import org.realtor.rets.retsapi.RETSGetObjectTransaction;
+import org.realtor.rets.retsapi.RETSTransaction;
+
+import javax.mail.internet.MimeBodyPart;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Extends the TestEvaluator Interface (extends BaseEvaluator) Check for
@@ -46,7 +39,7 @@ protected TestResult processResults(String transName,RETSTransaction t) {
 		  Object contentType=responseHeaders.get("content-type");
 		  String contentTypeString=contentType.toString();
 		  	if (contentTypeString==null
-		  			|| !(contentTypeString.indexOf("multipart/parallel")<0)){
+		  			|| (contentTypeString.indexOf("multipart/parallel")<0)){
 			  return reportResult("CheckMultipartResponse",
 			                                                "Content-type \"" + contentTypeString
 			                                                  + "\" is not multipart/parallel",
