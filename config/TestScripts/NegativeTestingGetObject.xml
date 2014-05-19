@@ -23,6 +23,6 @@
 <TestEvaluators>
 	<JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
 	<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectOptionalResponseHeaders18</JavaClassName>
-	<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectResponseHeaders18</JavaClassName>
+	<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectHeaders18</JavaClassName>
 </TestEvaluators>
 </RETSComplianceTest>
