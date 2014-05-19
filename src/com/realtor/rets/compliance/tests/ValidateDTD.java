@@ -116,7 +116,7 @@ private String errorList="";
             appendNotes("Failure:  no xml version in response");
             appendNotes(responseBody);
                     return reportResult("ValidateDTD:  "+transactionName,
-                                        "Checks to see if the the transaction validated against the RETS DTD",
+                                        "Checks to see if the transaction validated against the RETS DTD",
                                         status, "no xml version",jException,"n/a");
         }
 
