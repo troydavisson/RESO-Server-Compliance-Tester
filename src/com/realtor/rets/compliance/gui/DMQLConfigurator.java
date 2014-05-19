@@ -617,9 +617,10 @@ public class DMQLConfigurator extends JDialog {
        String m_userAgent = null;
        String m_username = "266123";
        String m_uaPassword=null;
+       String m_version="1.8";
 
        DMQLTestConfigurer dmqlTestConfigurer =
-                new DMQLTestConfigurer(m_username, m_password, m_serverUrl, m_transLogDir, m_userAgent, m_uaPassword);
+                new DMQLTestConfigurer(m_username, m_password, m_serverUrl, m_transLogDir, m_userAgent, m_uaPassword,m_version);
         DMQLConfigurator instance = new DMQLConfigurator(dmqlTestConfigurer, null);
 //        instance.setDmqlTestConfigurer(dmqlTestConfigurer);
         instance.show();
