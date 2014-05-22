@@ -135,7 +135,7 @@ private String errorList="";
                 if (!matchDocType.group(1).endsWith(docTypeLocation) ){
                     appendNotes("Failure:  incorrect dtd in response");
                     return reportResult("ValidateDTD:  "+transactionName,
-                        "Checks to see if the the transaction validated against the RETS DTD",
+                        "Checks to see if the transaction validated against the RETS DTD",
                         status,
                         notes,
                         jException,
@@ -144,7 +144,7 @@ private String errorList="";
             }else{
                 appendNotes("Failure:  unexpected doctype");
                 return reportResult("ValidateDTD:  "+transactionName,
-                "Checks to see if the the transaction validated against the RETS DTD",
+                "Checks to see if the transaction validated against the RETS DTD",
                 status, notes,jException,"unexpected doctype, expected <!DOCTYPE RETS SYSTEM \""+docTypeLocation+"\">");
             }
         }
@@ -208,7 +208,7 @@ private String errorList="";
 
 
     return reportResult("ValidateDTD:  "+transactionName,
-                        "Checks to see if the the transaction validated against the RETS DTD",
+                        "Checks to see if the transaction validated against the RETS DTD",
                         status, notes,jException,"n/a");
   }
 
