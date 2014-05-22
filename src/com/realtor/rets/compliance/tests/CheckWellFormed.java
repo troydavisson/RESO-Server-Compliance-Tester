@@ -133,7 +133,7 @@ public class CheckWellFormed extends BaseEvaluator {
     }
 
     return reportResult("CheckWellFormed:  " + transactionName,
-                        "Checks to see if the the body of a transaction is well formed",
+                        "Checks to see if the body of a transaction is well formed",
                         status, notes, jException, "n/a");
   }
 
