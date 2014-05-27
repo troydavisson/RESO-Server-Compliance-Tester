@@ -111,17 +111,17 @@ private String errorList="";
 
 		if(found){
 		return reportResult("MetadataResource0:  "+transactionName,
-		                        "Checks to see if the the transaction has valid breadth and depth",
+		                        "Checks to see if the transaction has valid breadth and depth",
 		                        status, "Child metadata beneath METADATA-RESOURCE was present: "+notes,jException,"n/a");
   		}else{
 		 return reportResult("MetadataResource0:  "+transactionName,
-                        "Checks to see if the the transaction has valid breadth and depth",
+                        "Checks to see if the transaction has valid breadth and depth",
                         "Success", notes,jException,"n/a");
   		}
 	}
 
 	return reportResult("MetadataResource0:  "+transactionName,
-			                        "Checks to see if the the transaction has valid breadth and depth",
+			                        "Checks to see if the transaction has valid breadth and depth",
 		                        status, notes,jException,"n/a");
 
 }

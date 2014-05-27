@@ -107,16 +107,16 @@ private String errorList="";
 
 		if(found){
 		return reportResult("MetadataClass*:  "+transactionName,
-		                        "Checks to see if the the transaction has valid breadth and depth",
+		                        "Checks to see if the transaction has valid breadth and depth",
 		                        "Success", notes,jException,"n/a");
   		}else{
 		 return reportResult("MetadataClass*:  "+transactionName,
-                        "Checks to see if the the transaction has valid breadth and depth",
+                        "Checks to see if the transaction has valid breadth and depth",
                         status, "No child metadata was found beneath METADATA-CLASS: "+notes,jException,"n/a");
   		}
 	}
 		 return reportResult("MetadataClass*:  "+transactionName,
-			                           "Checks to see if the the transaction has valid breadth and depth",
+			                           "Checks to see if the transaction has valid breadth and depth",
 		                        status, notes,jException,"n/a");
 
 }
