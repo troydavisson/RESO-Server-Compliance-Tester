@@ -14,6 +14,10 @@
 		<Type>${GetObject.Type}</Type>
 		<ID>${GetObject.Id}:0</ID>
 		<Location>0</Location>
+      <TestEvaluators>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectHeaders</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectOptionalResponseHeaders</JavaClassName>
+	</TestEvaluators>
 	</GetObjectTransaction>
 	<GetObjectTransaction>
 		<TransactionLabel>GetObject</TransactionLabel>
@@ -24,8 +28,5 @@
 			<JavaClassName>com.realtor.rets.compliance.tests.CheckMultipartResponse</JavaClassName>
 		</TestEvaluators>
 	</GetObjectTransaction>
-	<TestEvaluators>
-		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectHeaders</JavaClassName>
-		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectOptionalResponseHeaders</JavaClassName>
-	</TestEvaluators>
+
 </RETSComplianceTest>
