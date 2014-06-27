@@ -717,6 +717,7 @@ public class EvaluateLogin {
             testNotes = "Login transaction Contains an INCORRECT Date - RETS Header Date is NOT in GMT: " 
                             + dateHeaderString;  
         } else {
+            testStatus="success";
             testNotes = "Login transaction Contains the correct RETS Date Header using GMT: " 
                             + dateHeaderString;                
         }
