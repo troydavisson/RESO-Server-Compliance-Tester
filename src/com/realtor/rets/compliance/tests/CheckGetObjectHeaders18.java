@@ -4,13 +4,12 @@
  */
 package com.realtor.rets.compliance.tests;
 
-import java.util.Map;
-
+import com.realtor.rets.compliance.TestResult;
+import com.realtor.rets.compliance.tests.util.CollectionUtils;
 import org.realtor.rets.retsapi.RETSTransaction;
 import org.w3c.dom.Document;
 
-import com.realtor.rets.compliance.TestResult;
-import com.realtor.rets.compliance.tests.util.CollectionUtils;
+import java.util.Map;
 
 /**
  * Extends the TestEvaluator Interface (extends BaseEvaluator) Check for
@@ -81,6 +80,7 @@ protected TestResult processResults(String transName,RETSTransaction t) {
 
     for (int i = 0; i < requiredFields.length; i++) {
       if (map.get(requiredFields[i]) == null) {
+
         if (missingCount++ == 0) {
           missingRequiredFields = requiredFields[i];
         } else {
@@ -99,13 +99,13 @@ protected TestResult processResults(String transName,RETSTransaction t) {
     if (missingCount > 0) {
       return reportResult("CheckGetObjectResponseHeaders",
                                     "Transaction \"" + transactionName
-                                      + "\", the response is missing the following fields :"
+                                      + "\", the response is missing the following required header fields :"
                                       + missingRequiredFields, "Failure", notes);
     } else {
       return reportResult("CheckGetObjectResponseHeaders",
                                     "Transaction \"" + transactionName
-                                      + "\" All required response fields found"
-                                      + missingRequiredFields, "Success", notes);
+                                      + "\" All required response header fields found"
+                                      + "", "Success", notes);
     }
   }
 
