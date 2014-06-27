@@ -4,15 +4,14 @@
  */
 package com.realtor.rets.compliance.tests;
 
-import com.realtor.rets.compliance.TestReport;
 import com.realtor.rets.compliance.TestResult;
-import com.realtor.rets.compliance.tests.util.*;
+import com.realtor.rets.compliance.tests.util.CollectionUtils;
+import org.realtor.rets.retsapi.RETSTransaction;
+import org.w3c.dom.Document;
 
 import java.net.URL;
-import java.util.*;
-
-import org.realtor.rets.retsapi.*;
-import org.w3c.dom.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Extends the TestEvaluator Interface (extends BaseEvaluator) Check for
@@ -79,7 +78,8 @@ protected TestResult processResults(String transName,RETSTransaction t) {
       } 
       else if (location != null) {
     	  try {
-    		  URL aURL = new URL(location);
+              
+    		  URL aURL = new URL(location.replace("[","").replace("]",""));
     	  } catch (Exception e){
     		  return reportResult("checkOptionalResponseHeaders",
                       "Transaction \"" + transactionName
