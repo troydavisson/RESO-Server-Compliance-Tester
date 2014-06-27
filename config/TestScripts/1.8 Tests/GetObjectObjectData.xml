@@ -10,19 +10,7 @@
 		<ObjectData>*</ObjectData>
 	<TestEvaluators>
 		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectHeaders18</JavaClassName>
-		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectOjectDataResponseHeaders18</JavaClassName>
+		<JavaClassName>com.realtor.rets.compliance.tests.CheckGetObjectObjectDataResponseHeaders18</JavaClassName>
 	</TestEvaluators>
-	</GetObjectTransaction>
-	<GetObjectTransaction>
-		<TransactionLabel>GetObject</TransactionLabel>
-		<Resource>${GetObject.Resource}</Resource>-+
-		<Type>${GetObject.Type}</Type>
-		<ID>${GetObject.Id}:*</ID>
-		<Location>1</Location>
-		<ObjectData>*</ObjectData>
-		<TestEvaluators>
-			<JavaClassName>com.realtor.rets.compliance.tests.CheckMultipartResponse18</JavaClassName>
-			<JavaClassName>com.realtor.rets.compliance.tests.CheckMultipartResponseObjectData18</JavaClassName>
-		</TestEvaluators>
 	</GetObjectTransaction>
 	</RETSComplianceTest>
