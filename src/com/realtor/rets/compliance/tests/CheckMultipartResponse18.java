@@ -38,6 +38,7 @@ protected TestResult processResults(String transName,RETSTransaction t) {
 
 		  Object contentType=responseHeaders.get("content-type");
 		  String contentTypeString=contentType.toString();
+
 		  	if (contentTypeString==null
 		  			|| (contentTypeString.indexOf("multipart/parallel")<0)){
 			  return reportResult("CheckMultipartResponse",
@@ -46,7 +47,7 @@ protected TestResult processResults(String transName,RETSTransaction t) {
 			                                                "Failure",
                                               "Invalid content-type");
 		  	}
-		  String boundary=getBoundary(contentTypeString);
+		  String boundary=getBoundary(contentTypeString.replace("[","").replace("]",""));
 
 		  	if (boundary==null){
 						  return reportResult("CheckMultipartResponse",
@@ -64,12 +65,12 @@ protected TestResult processResults(String transName,RETSTransaction t) {
         			part = (MimeBodyPart) iterator.next();
         			String contentId=part.getHeader("Content-ID",";");
         			String objectId=part.getHeader("Object-ID",";");
-        			String mimeVersion=part.getHeader("MIME-Version",";");
-        		 	if (contentId==null||objectId==null||mimeVersion==null){
+
+        		 	if (contentId==null||objectId==null){
 						  return reportResult("CheckMultipartResponse",
 						                                                "missing required header field(s):"
-						                                                + "Content-ID, Object-ID and MIME-Version must all be present"
-						                                                + "values here are: Content-ID"+contentId+",Object-ID:"+objectId+",MIME-Version:"+mimeVersion,
+						                                                + "Content-ID andObject-ID  must all be present"
+						                                                + "values here are: Content-ID"+contentId+",Object-ID:"+objectId,
 						                                                "Failure",
 			                                              "Missing Required Multipart Header Fields");
         		 	}
@@ -93,11 +94,11 @@ protected TestResult processResults(String transName,RETSTransaction t) {
   }
 
   private String getBoundary(String contentString){
-  		  int boundIdx = contentString.indexOf("boundary");
-  		  String boundary = contentString.substring(boundIdx);
-  		  int endIdx = boundary.indexOf(";");
-  		  int begIdx = boundary.indexOf("=")+1;
-  		  boundary="--"+boundary.substring(begIdx,endIdx)+"--";
+  		  contentString=contentString.trim();
+          int boundIdx = contentString.indexOf("boundary=");
+          int endIdx = contentString.length();
+  		  String boundary="--"+contentString.substring(boundIdx+9,endIdx).replace("\"","")+"--";
+          System.out.println("getBoundary boundary: "+boundary);
 		  return boundary;
   }
 
