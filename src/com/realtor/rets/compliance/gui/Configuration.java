@@ -41,7 +41,7 @@ public class Configuration extends JDialog
                 {
                   "ChangePassword.Username", "ChangePassword.OldPassword", "ChangePassword.NewPassword",
                   "GetMetadata.Class", "GetMetadata.Table", "GetMetadata.Resource","GetObject.Id", "GetObject.Resource", "GetObject.Type",
-                  "Search.Class", "Search.QueryStandard", "Search.QuerySystem", "Search.SearchType", "Search.SelectStandard", "Search.SelectSystem","Search.Payload",
+                  "Search.Class", "Search.Class.Standard","Search.QueryStandard", "Search.QuerySystem", "Search.SearchType", "Search.SelectStandard", "Search.SelectSystem","Search.Payload",
                   "Update.Delimiter", "Update.Record", "Update.Resource", "Update.ClassName", "Update.Validate", "Update.Type",
                   "GetPayloadList.Id","PostObject.UpdateAction","PostObject.Type","PostObject.Resource","PostObject.UploadFile","Search.System.RequiredFields","Search.Standard.RequiredFields"
                 };
