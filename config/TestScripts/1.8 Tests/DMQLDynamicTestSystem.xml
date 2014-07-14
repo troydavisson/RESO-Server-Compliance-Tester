@@ -129,10 +129,24 @@
         </TestEvaluators>
     </SearchTransaction>
     <SearchTransaction>
-        <TransactionLabel>DMQL Date Search - Today</TransactionLabel>
+        <TransactionLabel>DMQL Date Search - before Today</TransactionLabel>
         <SearchType>${DMQL.Search.SearchType}</SearchType>
         <SearchClass>${DMQL.SearchClass}</SearchClass>
-        <Query>${Search.System.RequiredFields}(${DMQL.System.DateTime.Today.Field}=TODAY)</Query>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.DateTime.Today.Field}=TODAY-)</Query>
+        <QueryType>DMQL2</QueryType>
+        <Count>1</Count>
+        <Format>COMPACT-DECODED</Format>
+        <Limit>2</Limit>
+        <StandardNames>0</StandardNames>
+        <TestEvaluators>
+            <JavaClassName>com.realtor.rets.compliance.tests.dmql.DMQLSystemDateResultsToday</JavaClassName>
+        </TestEvaluators>
+    </SearchTransaction>
+    <SearchTransaction>
+        <TransactionLabel>DMQL Date Search - before NOW</TransactionLabel>
+        <SearchType>${DMQL.Search.SearchType}</SearchType>
+        <SearchClass>${DMQL.SearchClass}</SearchClass>
+        <Query>${Search.System.RequiredFields}(${DMQL.System.DateTime.Today.Field}=NOW-)</Query>
         <QueryType>DMQL2</QueryType>
         <Count>1</Count>
         <Format>COMPACT-DECODED</Format>
