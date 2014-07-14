@@ -127,10 +127,7 @@ public class DMQLStandardDateResultsToday extends DMQLResultsStandard {
                         if (queryResultCal.after(msf_calToday)) {
                             isTestFailed = true;
                             dateFailedValue = queryResultDate.toString();
-                        } else if (queryResultCal.before(msf_calToday)) {
-                            isTestFailed = true;
-                            dateFailedValue = queryResultDate.toString();
-                        }
+                        } 
 
                     } catch (ParseException ne) {
                         testResultStatus = "INFO";
