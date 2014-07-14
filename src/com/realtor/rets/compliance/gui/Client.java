@@ -307,7 +307,7 @@ public class Client extends JFrame
         copyrightPanel.add(label1, gbc);
         JLabel label2 = new JLabel();
         label2.setFont(new Font("Dialog", Font.ITALIC, 10));
-        label2.setText("for RESO ");
+        label2.setText("for RESO version 1.0");
         copyrightPanel.add(label2, gbc);
 
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
