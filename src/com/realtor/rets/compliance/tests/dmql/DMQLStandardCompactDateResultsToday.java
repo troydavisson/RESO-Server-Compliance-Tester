@@ -95,10 +95,7 @@ public class DMQLStandardCompactDateResultsToday extends DMQLResultsSystem {
                         if (queryResultCal.after(todayCalendar)) {
                             isTestFailed = true;
                             dateFailedValue = queryResultDate.toString();
-                        } else if (queryResultCal.before(todayCalendar)) {
-                            isTestFailed = true;
-                            dateFailedValue = queryResultDate.toString();
-                        }
+                        } 
 
                     } catch (ParseException ne) {
                         testResultStatus = "INFO";
