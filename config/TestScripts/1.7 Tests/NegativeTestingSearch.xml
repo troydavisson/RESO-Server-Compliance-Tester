@@ -5,7 +5,7 @@
  <SearchTransaction>
     <TransactionLabel>Unknown Query Field</TransactionLabel>
     <SearchType>${Search.SearchType}</SearchType>
-    <SearchClass>${Search.Class}</SearchClass>
+    <SearchClass>${Search.Class.Standard}</SearchClass>
     <Query>(RETSNegativeTestingField=Cleveland)</Query>
     <QueryType>DMQL2</QueryType>
     <Count>1</Count>
@@ -36,7 +36,7 @@
      <SearchTransaction>
           <TransactionLabel>Invalid Query Syntax</TransactionLabel>
           <SearchType>${Search.SearchType}</SearchType>
-          <SearchClass>${Search.Class}</SearchClass>
+          <SearchClass>${Search.Class.Standard}</SearchClass>
           <Query>${Search.QueryStandard}>${Search.QueryStandard}||</Query>
           <QueryType>DMQL2</QueryType>
           <Count>1</Count>
@@ -51,7 +51,7 @@
       <SearchTransaction>
 	<TransactionLabel>Requested DTD Unavailable</TransactionLabel>
 	<SearchType>${Search.SearchType}</SearchType>
-	<SearchClass>${Search.Class}</SearchClass>
+	<SearchClass>${Search.Class.Standard}</SearchClass>
 	<Query>${Search.QueryStandard}</Query>
 	<QueryType>DMQL2</QueryType>
 	<Count>1</Count>
