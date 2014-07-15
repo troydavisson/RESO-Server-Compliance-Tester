@@ -5,7 +5,7 @@
  <SearchTransaction>
     <TransactionLabel>Search With No Query XML</TransactionLabel>
     <SearchType>${Search.SearchType}</SearchType>
-    <SearchClass>${Search.Class}</SearchClass>
+    <SearchClass>${Search.Class.Standard}</SearchClass>
     <Count>1</Count>
     <Format>STANDARD-XML</Format>
     <Limit>2</Limit>

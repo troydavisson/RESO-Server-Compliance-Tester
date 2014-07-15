@@ -5,7 +5,7 @@
  <SearchTransaction>
     <TransactionLabel>Unknown Query Field</TransactionLabel>
     <SearchType>${Search.SearchType}</SearchType>
-    <SearchClass>${Search.Class}</SearchClass>
+    <SearchClass>${Search.Class.Standard}</SearchClass>
     <Query>(RETSNegativeTestingField=Cleveland)</Query>
     <QueryType>DMQL2</QueryType>
     <Count>1</Count>
@@ -34,7 +34,7 @@
      <SearchTransaction>
           <TransactionLabel>Invalid Query Syntax</TransactionLabel>
           <SearchType>${Search.SearchType}</SearchType>
-          <SearchClass>${Search.Class}</SearchClass>
+          <SearchClass>${Search.Class.Standard}</SearchClass>
           <Query>${Search.QueryStandard}>${Search.QueryStandard}||</Query>
           <QueryType>DMQL2</QueryType>
           <Count>1</Count>
@@ -48,7 +48,7 @@
       <SearchTransaction>
 	<TransactionLabel>Requested DTD Unavailable</TransactionLabel>
 	<SearchType>${Search.SearchType}</SearchType>
-	<SearchClass>${Search.Class}</SearchClass>
+	<SearchClass>${Search.Class.Standard}</SearchClass>
 	<Query>${Search.QueryStandard}</Query>
 	<QueryType>DMQL2</QueryType>
 	<Count>1</Count>
@@ -62,7 +62,7 @@
   <SearchTransaction>
 	<TransactionLabel>Invalid Payload</TransactionLabel>
 	<SearchType>${Search.SearchType}</SearchType>
-	<SearchClass>${Search.Class}</SearchClass>
+	<SearchClass>${Search.Class.Standard}</SearchClass>
 	<Query>${Search.QueryStandard}</Query>
 	<QueryType>DMQL2</QueryType>
 	<Count>1</Count>
@@ -76,7 +76,7 @@
  <SearchTransaction>
 	<TransactionLabel>Payload and Format Invalid Combination</TransactionLabel>
 	<SearchType>${Search.SearchType}</SearchType>
-	<SearchClass>${Search.Class}</SearchClass>
+	<SearchClass>${Search.Class.Standard}</SearchClass>
 	<Query>${Search.QueryStandard}</Query>
 	<QueryType>DMQL2</QueryType>
 	<Count>1</Count>
@@ -87,11 +87,11 @@
 	<TestEvaluators>
 	    <JavaClassName>com.realtor.rets.compliance.tests.PayloadAndFormat</JavaClassName>
 	</TestEvaluators>
-      </SearchTransaction> 
+      </SearchTransaction>
 <SearchTransaction>
 	<TransactionLabel>Payload and Select Invalid Combination</TransactionLabel>
 	<SearchType>${Search.SearchType}</SearchType>
-	<SearchClass>${Search.Class}</SearchClass>
+	<SearchClass>${Search.Class.Standard}</SearchClass>
 	<Query>${Search.QueryStandard}</Query>
 	<QueryType>DMQL2</QueryType>
 	<Count>1</Count>
@@ -102,7 +102,7 @@
 	<TestEvaluators>
 	    <JavaClassName>com.realtor.rets.compliance.tests.PayloadAndSelect</JavaClassName>
 	</TestEvaluators>
-      </SearchTransaction> 
+      </SearchTransaction>
  <TestEvaluators>
     <JavaClassName>com.realtor.rets.compliance.tests.CheckWellFormed</JavaClassName>
     <JavaClassName>com.realtor.rets.compliance.tests.CheckOptionalResponseHeaders18</JavaClassName>

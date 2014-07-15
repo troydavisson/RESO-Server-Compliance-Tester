@@ -18,11 +18,11 @@
 	<JavaClassName>com.realtor.rets.compliance.tests.ValidateSearch18DTD</JavaClassName>
     </TestEvaluators>
   </SearchTransaction>
--->  
+-->
 <SearchTransaction>
     <TransactionLabel>Search Standard Names</TransactionLabel>
     <SearchType>${Search.SearchType}</SearchType>
-    <SearchClass>${Search.Class}</SearchClass>
+    <SearchClass>${Search.Class.Standard}</SearchClass>
     <Query>${Search.Standard.RequiredFields}${Search.QueryStandard}</Query>
     <QueryType>DMQL2</QueryType>
     <Count>1</Count>
